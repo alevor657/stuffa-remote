@@ -38,15 +38,14 @@ export default class App extends React.Component {
     this.press = this.press.bind(this);
   }
 
-  async componentDidMount() {
-    console.log('cdm');
-
-    try {
-      this.ws = await findServer();      
-    } catch (err) {
-      // open input prompt
-    }
-  
+  componentDidMount() {
+    findServer()
+      .then(ws => {
+        console.log('working!', ws);
+      })
+      .catch(err => {
+        console.log(err);        
+      });
   }
 
   press() {
