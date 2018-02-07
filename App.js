@@ -1,40 +1,50 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
+import findServer from './findServer';
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
     // this.ws = new WebSocket('ws://192.168.1.62:8080/remote');
-    this.ws = new WebSocket('ws://193.11.186.166:8080/remote');
+    // this.ws = new WebSocket('ws://192.168.1.62:8080/remote');
 
     // this.ws = new WebSocket('wss://echo.websocket.org/');
 
 
-    this.state = {
-      connected: false
-    };
+    // this.state = {
+    //   connected: false
+    // };
 
-    this.ws.onopen = () => {
-      console.log('connection opened');
+    // this.ws.onopen = () => {
+    //   console.log('connection opened');
 
-      this.setState({connected: true});
-    }
+    //   this.setState({connected: true});
+    // }
 
-    this.ws.onerror = (e) => {
-      console.log(e.message);
-      // console.log(err.target);
-    }
+    // this.ws.onerror = (e) => {
+    //   console.log(e.message);
+    //   // console.log(err.target);
+    // }
 
-    this.ws.onclose = e => {
-      console.log('closed', e.code, e.reason);
-    }
+    // this.ws.onclose = e => {
+    //   console.log('closed', e.code, e.reason);
+    // }
 
-    this.ws.onmessage = (e) => {
-      // a message was received
-      console.log(e.data);
-    };
+    // this.ws.onmessage = (e) => {
+    //   // a message was received
+    //   console.log(e.data);
+    // };
 
     this.press = this.press.bind(this);
+  }
+
+  async componentDidMount() {
+    console.log('cdm');
+
+    this.ws = await findServer();
+    console.log(ws);
+    
+
   }
 
   press() {
