@@ -41,10 +41,12 @@ export default class App extends React.Component {
   async componentDidMount() {
     console.log('cdm');
 
-    this.ws = await findServer();
-    console.log(ws);
-    
-
+    try {
+      this.ws = await findServer();      
+    } catch (err) {
+      // open input prompt
+    }
+  
   }
 
   press() {
