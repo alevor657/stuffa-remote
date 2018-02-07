@@ -4,7 +4,9 @@ import { StyleSheet, Text, View, Button } from 'react-native';
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    this.ws = new WebSocket('ws://192.168.1.62:8080/remote');
+    // this.ws = new WebSocket('ws://192.168.1.62:8080/remote');
+    this.ws = new WebSocket('ws://193.11.186.166:8080/remote');
+
     // this.ws = new WebSocket('wss://echo.websocket.org/');
 
 
