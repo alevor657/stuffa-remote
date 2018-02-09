@@ -17,9 +17,9 @@ function check(i = 0, resolve, reject) {
     setTimeout(() => {
         if (ws.readyState === 1) {
             return resolve(ws);
-        } 
+        }
 
-        i++;        
+        i++;
         check(i, resolve, reject);
     }, 100);
 }
