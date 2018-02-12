@@ -2,7 +2,7 @@ let baseURI = '192.168.1';
 
 export default function findServer() {
     return new Promise((resolve, reject) => {
-        check(0, resolve, reject);
+        check(60, resolve, reject);
     });
 }
 
