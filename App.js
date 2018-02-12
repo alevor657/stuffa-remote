@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button, ActivityIndicator } from 'react-native';
+import { StyleSheet, Text, View, Button, ActivityIndicator, Alert } from 'react-native';
 import findServer from './src/findServerV2';
 
 export default class App extends React.Component {
@@ -36,8 +36,16 @@ export default class App extends React.Component {
                     console.log(e.data);
                 };
             })
-            .catch(err => {
-                console.log(err);
+            .catch(() => {
+                Alert.alert(
+                    'Stuffa desktop not detected! :C',
+                    'Make sure that desktop application is running and both the phone and computer are connected to the same Wi-Fi hotspot',
+                    [
+                        { text: 'try again', onPress: () => console.log() },
+                        { text: 'manual input', onPress: () => console.log() },
+                    ],
+                    { cancelable: false }
+                );
             });
     }
 

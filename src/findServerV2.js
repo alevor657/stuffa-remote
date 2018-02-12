@@ -21,6 +21,8 @@ function check(i = 0) {
         let ws = new WebSocket(`ws://${baseURI}.${i}:8080/remote`);
 
         ws.onopen = () => resolve(ws);
-        ws.onclose = e => ws.close(e);
+        ws.onclose = e => setTimeout(function(e) {
+            reject(e.message);
+        }, 1000, e);
     });
 }
