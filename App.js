@@ -1,6 +1,7 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button, ActivityIndicator, Alert } from 'react-native';
-import findServer from './src/findServerV2';
+import { StyleSheet, Text, View, Button, ActivityIndicator } from 'react-native';
+import findServer from './src/findServer';
+import drawAlert from './src/drawAlert';
 
 export default class App extends React.Component {
     constructor(props) {
@@ -11,46 +12,47 @@ export default class App extends React.Component {
         };
 
         this.press = this.press.bind(this);
+        this.connect = this.connect.bind(this);
     }
 
     componentDidMount() {
+        this.connect();
+    }
+
+    connect() {
         findServer()
             .then(ws => {
                 console.log('CONNECTION OPENED', ws);
                 this.ws = ws;
-                this.setState({connected: true});
-        
+                console.log(this, this.ws);
+                this.setState({ connected: true });
+
                 this.ws.onerror = (e) => {
                     console.log(e.message);
-                    // console.log(err.target);
+                    console.log('Attempting reconnect', this);
+
+                    this.connect();
                 };
-        
+
                 this.ws.onclose = e => {
                     console.log('closed', e.code, e.reason);
 
-                    this.setState({connected: false});
+                    this.setState({ connected: false });
                 };
-        
+
                 this.ws.onmessage = (e) => {
                     // a message was received
                     console.log(e.data);
                 };
             })
             .catch(() => {
-                Alert.alert(
-                    'Stuffa desktop not detected! :C',
-                    'Make sure that desktop application is running and both the phone and computer are connected to the same Wi-Fi hotspot',
-                    [
-                        { text: 'try again', onPress: () => console.log() },
-                        { text: 'manual input', onPress: () => console.log() },
-                    ],
-                    { cancelable: false }
-                );
+                drawAlert(this.connect, undefined);
             });
     }
 
+
     press() {
-        console.log(this.state.connected);        
+        console.log(this.state.connected);
         if (this.state.connected) {
             this.ws.send('test');
         } else {
