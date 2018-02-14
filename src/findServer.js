@@ -1,27 +1,30 @@
+import { SERVER_PORT } from './constants';
+
 let baseURI = '192.168.1';
 
 export default function findServer() {
-    return new Promise((resolve, reject) => {
-        check(0, resolve, reject);
-    });
-}
+    let promises = [];
 
-function check(i = 0, resolve, reject) {
-    console.log(i);
-    if (i > 255) {
-        return reject('No server found');
+    for (let i = 0; i < 256; i++) {
+        console.log(i);
+        promises.push(check(i));
     }
 
-    let ws = new WebSocket(`ws://${baseURI}.${i}:8080/remote`);
+    let res = Promise.race(promises);
 
-    let timer = setTimeout(() => {
-        if (ws.readyState === 1) {
-            return resolve(ws);
-        }
+    // delete propmises;
+    promises = null;
 
-        i++;
-        ws.close();
-        clearTimeout(timer);
-        check(i, resolve, reject);
-    }, 100);
+    return res;
+}
+
+function check(i = 0) {
+    return new Promise((resolve, reject) => {
+        let ws = new WebSocket(`ws://${baseURI}.${i}:${SERVER_PORT}/remote`);
+
+        ws.onopen = () => resolve(ws);
+        ws.onclose = e => setTimeout(function(e) {
+            reject(e.message);
+        }, 5000, e);
+    });
 }
