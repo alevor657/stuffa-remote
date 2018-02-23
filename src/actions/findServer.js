@@ -1,4 +1,4 @@
-import { SERVER_PORT } from './constants';
+import { SERVER_PORT } from '../constants';
 
 let baseURI = '192.168.1';
 // let baseURI = '193.11.185';
