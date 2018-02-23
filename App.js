@@ -19,12 +19,14 @@ export default class App extends React.Component {
         this.connect();
     }
 
+    componentWillUnmount() {
+        this.ws.close();
+    }
+
     connect() {
         findServer()
             .then(ws => {
-                console.log('CONNECTION OPENED', ws);
                 this.ws = ws;
-                console.log(this, this.ws);
                 this.setState({ connected: true });
 
                 this.ws.onerror = (e) => {
@@ -35,9 +37,10 @@ export default class App extends React.Component {
                 };
 
                 this.ws.onclose = e => {
-                    console.log('closed', e.code, e.reason);
+                    // console.log('closed', e.code, e.reason);
 
                     this.setState({ connected: false });
+                    this.connect();
                 };
 
                 this.ws.onmessage = (e) => {
