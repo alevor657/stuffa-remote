@@ -21,12 +21,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="/home/yooo/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp-urlconnection/3.6.0/3f9b16b774f2c36cfd86dd2053d0b3059531dacc/okhttp-urlconnection-3.6.0.jar"
+        jar="/root/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.6.0/69edde9fc4b01c9fd51d25b83428837478c27254/okhttp-3.6.0.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
-        sha1="3f9b16b774f2c36cfd86dd2053d0b3059531dacc">
-        <dex dex="/home/yooo/code/stuffa-remote/android/app/build/intermediates/pre-dexed/debug/okhttp-urlconnection-3.6.0_0d242f9720741aeeeb662c42d520ba62b4f51dd9.jar" />
+        sha1="69edde9fc4b01c9fd51d25b83428837478c27254">
+        <dex dex="/home/yooo/code/stuffa-remote/android/app/build/intermediates/pre-dexed/debug/okhttp-3.6.0_a4ff18420a8934a9e3216240ba688ec9282bc97a.jar" />
     </item>
     <item
         is-multidex="false"
@@ -57,12 +57,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="/home/yooo/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar"
+        jar="/root/.gradle/caches/modules-2/files-2.1/com.facebook.fbui.textlayoutbuilder/staticlayout-proxy/1.0/f162442a19fff13995fbd51ba414d9ee05579080/staticlayout-proxy-1.0.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
-        sha1="6975da39a7040257bd51d21a231b76c915872d38">
-        <dex dex="/home/yooo/code/stuffa-remote/android/app/build/intermediates/pre-dexed/debug/javax.inject-1_631b97abd2d2e79691e08d2815b7e69517d9fa61.jar" />
+        sha1="f162442a19fff13995fbd51ba414d9ee05579080">
+        <dex dex="/home/yooo/code/stuffa-remote/android/app/build/intermediates/pre-dexed/debug/staticlayout-proxy-1.0_b3ccc2babea9a884ceb74ff86b197240a1d61adc.jar" />
     </item>
     <item
         is-multidex="false"
@@ -84,21 +84,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="/home/yooo/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.6.0/69edde9fc4b01c9fd51d25b83428837478c27254/okhttp-3.6.0.jar"
+        jar="/root/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
-        sha1="69edde9fc4b01c9fd51d25b83428837478c27254">
-        <dex dex="/home/yooo/code/stuffa-remote/android/app/build/intermediates/pre-dexed/debug/okhttp-3.6.0_b28508210604c9e689fbe24cfe365e39c61ea636.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/yooo/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.0/5871fb60dc68d67da54a663c3fd636a10a532948/jsr305-3.0.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="5871fb60dc68d67da54a663c3fd636a10a532948">
-        <dex dex="/home/yooo/code/stuffa-remote/android/app/build/intermediates/pre-dexed/debug/jsr305-3.0.0_fa841b8b30f77468261e718870daa7e7eca24203.jar" />
+        sha1="6975da39a7040257bd51d21a231b76c915872d38">
+        <dex dex="/home/yooo/code/stuffa-remote/android/app/build/intermediates/pre-dexed/debug/javax.inject-1_7e84a58f14b03e539c66973b1348dfcc92b37959.jar" />
     </item>
     <item
         is-multidex="false"
@@ -111,6 +102,33 @@
     </item>
     <item
         is-multidex="false"
+        jar="/root/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="/home/yooo/code/stuffa-remote/android/app/build/intermediates/pre-dexed/debug/bolts-tasks-1.4.0_8cb1dcf68d89b3835f6b8620276bad0ce2e75a94.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/root/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.0/5871fb60dc68d67da54a663c3fd636a10a532948/jsr305-3.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="5871fb60dc68d67da54a663c3fd636a10a532948">
+        <dex dex="/home/yooo/code/stuffa-remote/android/app/build/intermediates/pre-dexed/debug/jsr305-3.0.0_456beae1bfbef6196546d4c957b5e9b726c256ac.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/root/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp-urlconnection/3.6.0/3f9b16b774f2c36cfd86dd2053d0b3059531dacc/okhttp-urlconnection-3.6.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="3f9b16b774f2c36cfd86dd2053d0b3059531dacc">
+        <dex dex="/home/yooo/code/stuffa-remote/android/app/build/intermediates/pre-dexed/debug/okhttp-urlconnection-3.6.0_f1b31295be92f01ba61bcf2b9b0bcc31ee1d17ab.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/home/yooo/code/stuffa-remote/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/classes.jar"
         jumboMode="false"
         optimize="true"
@@ -120,12 +138,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="/home/yooo/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.13.0/a9283170b7305c8d92d25aff02a6ab7e45d06cbe/okio-1.13.0.jar"
+        jar="/root/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.13.0/a9283170b7305c8d92d25aff02a6ab7e45d06cbe/okio-1.13.0.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
         sha1="a9283170b7305c8d92d25aff02a6ab7e45d06cbe">
-        <dex dex="/home/yooo/code/stuffa-remote/android/app/build/intermediates/pre-dexed/debug/okio-1.13.0_5c1c984cfb2e5109e981e720741f448860db5c45.jar" />
+        <dex dex="/home/yooo/code/stuffa-remote/android/app/build/intermediates/pre-dexed/debug/okio-1.13.0_e7ea4e486c0a517743326a43c02b22b521807cd1.jar" />
     </item>
     <item
         is-multidex="false"
@@ -135,15 +153,6 @@
         revision="23.0.1"
         sha1="fe85b87215e405f5917d40ae4960488ac9224b74">
         <dex dex="/home/yooo/code/stuffa-remote/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-fresco-1.3.0_af1f79bd5f71abdfc5c0461b1c337f1c655c39a0.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/yooo/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
-        <dex dex="/home/yooo/code/stuffa-remote/android/app/build/intermediates/pre-dexed/debug/bolts-tasks-1.4.0_bea68e9a1e981c590c89139e7ee4c61476d0612e.jar" />
     </item>
     <item
         is-multidex="false"
@@ -162,15 +171,6 @@
         revision="23.0.1"
         sha1="9809e90be788acdb479b2b44e2112f3295a03068">
         <dex dex="/home/yooo/code/stuffa-remote/android/app/build/intermediates/pre-dexed/debug/infer-annotations-4.0_9d9ce35ea9700a0f62f5a991a2001d6b1959c93c.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/yooo/.gradle/caches/modules-2/files-2.1/com.facebook.fbui.textlayoutbuilder/staticlayout-proxy/1.0/f162442a19fff13995fbd51ba414d9ee05579080/staticlayout-proxy-1.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="f162442a19fff13995fbd51ba414d9ee05579080">
-        <dex dex="/home/yooo/code/stuffa-remote/android/app/build/intermediates/pre-dexed/debug/staticlayout-proxy-1.0_4c46f7d318d99ad2b4354ffc2689e94c499130c6.jar" />
     </item>
     <item
         is-multidex="false"
