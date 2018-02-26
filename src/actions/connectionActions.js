@@ -1,5 +1,7 @@
 import findServer from './findServer';
 import * as types from '../constants/actionTypes';
+import drawAlert from '../components/drawAlert';
+import { openModal, closeModal } from '../actions/modalActions';
 
 export function connectionSuccess(ws) {
     console.log('SUCCESS');
@@ -23,6 +25,10 @@ export function connectToDesktop() {
             dispatch(connectionSuccess(res));
         }).catch( err => {
             dispatch(connectionFailure(err));
+            drawAlert(
+                () => dispatch(connectToDesktop()),
+                () => dispatch(openModal())
+            );
         });
     };
 }

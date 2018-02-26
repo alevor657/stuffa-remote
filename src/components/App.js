@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { StyleSheet, Text, View, Button, ActivityIndicator } from 'react-native';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { connectToDesktop } from '../actions/connectionActions';
 import drawAlert from './drawAlert';
+import ManualAddressInput from './manualInputModal';
+import { openModal, closeModal } from '../actions/modalActions';
 
-class App extends React.Component {
+class App extends Component {
     constructor(props) {
         super(props);
     }
@@ -20,15 +22,15 @@ class App extends React.Component {
         this.ws.close();
     }
 
-    componentWillReceiveProps(props) {
-        let { connectToDesktop } = this.props;
+    // bad shit
+    // componentDidUpdate() {
+    //     let { connectToDesktop, openModal, modalVisible } = this.props;
 
-        if (!props.ws) {
-            drawAlert(connectToDesktop, console.log);
-        } else {
-            props.ws.onclose = () => drawAlert(connectToDesktop, console.log);
-        }
-    }
+    //     console.log('CDU', this.props.err && !modalVisible);
+    //     if (this.props.err && !modalVisible) {
+    //         drawAlert(connectToDesktop, openModal);
+    //     }
+    // }
 
     render() {
         return (
@@ -41,6 +43,7 @@ class App extends React.Component {
                         <Text>Connecting</Text>
                     </View>
                 )}
+                {this.props.modalVisible && <ManualAddressInput/>}
             </View>
         );
     }
@@ -58,14 +61,18 @@ const styles = StyleSheet.create({
 function mapStateToProps(state, ownProps) {
     return {
         ws: state.connection.ws,
-        failCounter: state.connection.failCounter,
+        failCounter: state.connection.failCounter, //test
+        modalVisible: state.modal.visible,
+        err: state.connection.err,
         ...ownProps
     };
 }
 
 function mapDispatchToProps(dispatch) {
     return {
-        connectToDesktop: bindActionCreators(connectToDesktop, dispatch)
+        connectToDesktop: bindActionCreators(connectToDesktop, dispatch),
+        openModal: bindActionCreators(openModal, dispatch),
+        closeModal: bindActionCreators(closeModal, dispatch)
     };
 }
 
