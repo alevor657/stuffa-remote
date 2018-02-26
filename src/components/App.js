@@ -1,25 +1,27 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button, ActivityIndicator } from 'react-native';
-import bindActionCreators from 'react-redux';
-import connect from '../actions/connectionActions';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { connectToDesktop } from '../actions/connectionActions';
 
 class App extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {
-            connected: false
-        };
-
         this.press = this.press.bind(this);
     }
 
     componentDidMount() {
-
+        this.props.connectToDesktop();
+        console.log('props', this.props);
     }
 
     componentWillUnmount() {
         this.ws.close();
+    }
+
+    componentDidUpdate() {
+        console.log(this.props, 'UPDATE');
     }
 
     press() {
@@ -33,24 +35,18 @@ class App extends React.Component {
 
     render() {
         return (
-            <View>
-                <Text>test</Text>
+            <View style={styles.container}>
+                {this.props.ws ? (
+                    <Text>Connected</Text>
+                ) : (
+                    <View>
+                        <ActivityIndicator size="large" color="#0000ff" />
+                        <Text>Connecting</Text>
+                    </View>
+                )}
             </View>
         );
     }
-}
-
-function mapStateToProps(state, ownProps) {
-    return {
-        user: state.user,
-        ...ownProps
-    };
-}
-
-function mapDispatchToProps(dispatch) {
-    return {
-        connect: bindActionCreators(connect, dispatch)
-    };
 }
 
 const styles = StyleSheet.create({
@@ -62,4 +58,17 @@ const styles = StyleSheet.create({
     },
 });
 
-export default App;
+function mapStateToProps(state, ownProps) {
+    return {
+        ws: undefined,
+        ...ownProps
+    };
+}
+
+function mapDispatchToProps(dispatch) {
+    return {
+        connectToDesktop: bindActionCreators(connectToDesktop, dispatch)
+    };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

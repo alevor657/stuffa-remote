@@ -4,6 +4,7 @@ let baseURI = '192.168.1';
 // let baseURI = '193.11.185';
 
 export default function findServer() {
+    console.log('CONNECTING...');
     let promises = [];
 
     for (let i = 0; i < 256; i++) {
