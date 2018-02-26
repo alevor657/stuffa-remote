@@ -22,7 +22,6 @@ export function connectToDesktop() {
         return findServer().then( res => {
             dispatch(connectionSuccess(res));
         }).catch( err => {
-            console.log('CATCHED', err);
             dispatch(connectionFailure(err));
         });
     };

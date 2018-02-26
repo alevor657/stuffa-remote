@@ -3,33 +3,30 @@ import { StyleSheet, Text, View, Button, ActivityIndicator } from 'react-native'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { connectToDesktop } from '../actions/connectionActions';
+import drawAlert from './drawAlert';
 
 class App extends React.Component {
     constructor(props) {
         super(props);
-
-        this.press = this.press.bind(this);
     }
 
     componentDidMount() {
-        this.props.connectToDesktop();
-        console.log('props', this.props);
+        let { connectToDesktop } = this.props;
+
+        connectToDesktop();
     }
 
     componentWillUnmount() {
         this.ws.close();
     }
 
-    componentDidUpdate() {
-        console.log(this.props, 'UPDATE');
-    }
+    componentWillReceiveProps(props) {
+        let { connectToDesktop } = this.props;
 
-    press() {
-        console.log(this.state.connected);
-        if (this.state.connected) {
-            this.ws.send('test');
+        if (!props.ws) {
+            drawAlert(connectToDesktop, console.log);
         } else {
-            console.log('not connected');
+            props.ws.onclose = () => drawAlert(connectToDesktop, console.log);
         }
     }
 
@@ -61,6 +58,7 @@ const styles = StyleSheet.create({
 function mapStateToProps(state, ownProps) {
     return {
         ws: state.connection.ws,
+        failCounter: state.connection.failCounter,
         ...ownProps
     };
 }
