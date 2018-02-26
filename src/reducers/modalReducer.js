@@ -2,6 +2,7 @@ import * as types from '../constants/actionTypes';
 
 const initialState = {
     visible: false
+    // visible: true //dev
 };
 
 export default function modal(state = initialState, action) {

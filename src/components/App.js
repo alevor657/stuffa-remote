@@ -15,22 +15,12 @@ class App extends Component {
     componentDidMount() {
         let { connectToDesktop } = this.props;
 
-        connectToDesktop();
+        connectToDesktop(); //dev
     }
 
     componentWillUnmount() {
         this.ws.close();
     }
-
-    // bad shit
-    // componentDidUpdate() {
-    //     let { connectToDesktop, openModal, modalVisible } = this.props;
-
-    //     console.log('CDU', this.props.err && !modalVisible);
-    //     if (this.props.err && !modalVisible) {
-    //         drawAlert(connectToDesktop, openModal);
-    //     }
-    // }
 
     render() {
         return (
@@ -63,6 +53,7 @@ function mapStateToProps(state, ownProps) {
         ws: state.connection.ws,
         failCounter: state.connection.failCounter, //test
         modalVisible: state.modal.visible,
+        // modalVisible: true, // dev
         err: state.connection.err,
         ...ownProps
     };

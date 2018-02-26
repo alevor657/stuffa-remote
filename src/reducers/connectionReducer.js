@@ -1,17 +1,29 @@
 import * as types from '../constants/actionTypes';
 
-export default function connection(state = { failCounter: 0 }, action) {
+let initialState = {
+    ws: null,
+    ip: '',
+    failCounter: 0,
+    err: ''
+};
+
+export default function connection(state = initialState, action) {
+    console.log(action);
     switch (action.type) {
     case types.CONNECTION_SUCCESS:
         return {
             ...state,
-            ws: action.payload,
-            failCounter: 0
+            ws: action.payload.ws,
+            ip: action.payload.desktopAddress,
+            failCounter: 0,
+            err: ''
         };
+
     case types.CONNECTION_FAILURE:
         return {
             ...state,
             ws: null,
+            ip: '',
             failCounter: state.failCounter + 1,
             err: action.payload
         };

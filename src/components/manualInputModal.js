@@ -3,45 +3,81 @@ import { Text, View, Button, Modal, StyleSheet, TextInput } from 'react-native';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from '../actions/modalActions';
+import { connectToDesktop } from '../actions/connectionActions';
 
 class ManualAddressInput extends Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            ip: ''
+        };
+
+        this._handeSubmit = this._handeSubmit.bind(this);
+    }
+
+    _handeSubmit() {
+        this.props.connectToDesktop(this.state.ip);
+        this.props.close();
     }
 
     render() {
         return (
-            <View style={style.container}>
+            <View style={styles.container}>
                 <Modal
-                    visible
+                    visible={this.props.visible}
                     animationType={'slide'}
-                    onRequestClose={() => this._toggleModal()}
+                    onRequestClose={() => this.props.close()}
                 >
-                    <Text>Enter IP address</Text>
-                    <TextInput/>
-                    <Button title='Connect'/>
+                    <View style={styles.modalContainer}>
+                        <View style={styles.innerContainer}>
+                            <TextInput
+                                autoFocus
+                                placeholder='IP address'
+                                autoCorrect={false}
+                                keyboardType='numeric'
+                                returnKeyLabel='Connect'
+                                onSubmitEditing={this._handeSubmit}
+                                onChangeText={(ip) => this.setState({ ip })}
+                            />
+                            <View style={styles.buttonContainer}>
+                                <Button
+                                    title='connect'
+                                    onPress={this._handeSubmit}
+                                />
+                            </View>
+                        </View>
+                    </View>
                 </Modal>
             </View>
         );
     }
 }
 
-const style = StyleSheet.create({
+const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        justifyContent: 'center',
+        flex: 1
     },
-    modal: {
+    modalContainer: {
         flex: 1,
-        justifyContent: 'center',
         backgroundColor: 'grey',
+    },
+    innerContainer: {
+        flex: 1,
+        padding: '5%'
+        // justifyContent: 'space-between'
+    },
+    buttonContainer: {
+        marginTop: 20,
+        justifyContent: 'flex-start',
+        flex: 1
     }
 });
 
 function mapStateToProps(state, ownProps) {
     return {
-        // ,
-        // ...ownProps
+        visible: state.modal.visible,
+        ...ownProps
     };
 }
 
@@ -49,6 +85,7 @@ function mapDispatchToProps(dispatch) {
     return {
         open: bindActionCreators(actions.openModal, dispatch),
         close: bindActionCreators(actions.closeModal, dispatch),
+        connectToDesktop: bindActionCreators(connectToDesktop, dispatch)
     };
 }
 

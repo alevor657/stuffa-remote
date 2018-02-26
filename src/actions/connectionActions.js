@@ -1,4 +1,4 @@
-import findServer from './findServer';
+import findServer, { directConnect } from './findServer';
 import * as types from '../constants/actionTypes';
 import drawAlert from '../components/drawAlert';
 import { openModal, closeModal } from '../actions/modalActions';
@@ -19,9 +19,9 @@ export function connectionFailure(err) {
     };
 }
 
-export function connectToDesktop() {
+export function connectToDesktop(ip = null) {
     return function(dispatch) {
-        return findServer().then( res => {
+        return determineConnectionType(ip).then( res => {
             dispatch(connectionSuccess(res));
         }).catch( err => {
             dispatch(connectionFailure(err));
@@ -31,4 +31,8 @@ export function connectToDesktop() {
             );
         });
     };
+}
+
+function determineConnectionType(ip) {
+    return ip ? directConnect(ip) : findServer();
 }
