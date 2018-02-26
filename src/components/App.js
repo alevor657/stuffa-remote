@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
 
 function mapStateToProps(state, ownProps) {
     return {
-        ws: undefined,
+        ws: state.connection.ws,
         ...ownProps
     };
 }
