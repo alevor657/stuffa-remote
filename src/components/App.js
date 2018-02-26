@@ -3,9 +3,7 @@ import { StyleSheet, Text, View, Button, ActivityIndicator } from 'react-native'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { connectToDesktop } from '../actions/connectionActions';
-import drawAlert from './drawAlert';
 import ManualAddressInput from './manualInputModal';
-import { openModal, closeModal } from '../actions/modalActions';
 
 class App extends Component {
     constructor(props) {
@@ -20,6 +18,15 @@ class App extends Component {
 
     componentWillUnmount() {
         this.ws.close();
+    }
+
+    componentDidUpdate() {
+        let { connectToDesktop } = this.props;
+
+        // Reconnect on failure
+        if (this.props.ws) {
+            this.props.ws.onclose = () => connectToDesktop();
+        }
     }
 
     render() {
@@ -62,8 +69,6 @@ function mapStateToProps(state, ownProps) {
 function mapDispatchToProps(dispatch) {
     return {
         connectToDesktop: bindActionCreators(connectToDesktop, dispatch),
-        openModal: bindActionCreators(openModal, dispatch),
-        closeModal: bindActionCreators(closeModal, dispatch)
     };
 }
 

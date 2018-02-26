@@ -21,7 +21,7 @@ export default function findServer() {
 }
 
 export function directConnect(ip) {
-    console.log('CONNECTING DIRECTLY...');
+    console.log('CONNECTING DIRECTLY...', ip);
 
     return new Promise((resolve, reject) => {
         let ws = new WebSocket(`ws://${ip}:${SERVER_PORT}/remote`);

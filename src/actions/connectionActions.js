@@ -3,11 +3,14 @@ import * as types from '../constants/actionTypes';
 import drawAlert from '../components/drawAlert';
 import { openModal, closeModal } from '../actions/modalActions';
 
-export function connectionSuccess(ws) {
-    console.log('SUCCESS');
+export function connectionSuccess(res) {
+    console.log('SUCCESS', res);
     return {
         type: types.CONNECTION_SUCCESS,
-        payload: ws
+        payload: {
+            ws: res.ws,
+            ip: res.ip
+        }
     };
 }
 
@@ -20,6 +23,7 @@ export function connectionFailure(err) {
 }
 
 export function connectToDesktop(ip = null) {
+    console.log('ATTEMPTING CONNECT');
     return function(dispatch) {
         return determineConnectionType(ip).then( res => {
             dispatch(connectionSuccess(res));
