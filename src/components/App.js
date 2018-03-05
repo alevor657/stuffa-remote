@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { connectToDesktop } from '../actions/connectionActions';
 import ManualAddressInput from './manualInputModal';
+import Player from './player/Player';
 
 class App extends Component {
     constructor(props) {
@@ -33,7 +34,7 @@ class App extends Component {
         return (
             <View style={styles.container}>
                 {this.props.ws ? (
-                    <Text>Connected</Text>
+                    <Player />
                 ) : (
                     <View>
                         <ActivityIndicator size="large" color="#0000ff" />
