@@ -14,7 +14,7 @@ export default function connection(state = initialState, action) {
         return {
             ...state,
             ws: action.payload.ws,
-            ip: action.payload.desktopAddress,
+            ip: action.payload.ip,
             failCounter: 0,
             err: ''
         };

@@ -9,7 +9,7 @@ export function connectionSuccess(res) {
         type: types.CONNECTION_SUCCESS,
         payload: {
             ws: res.ws,
-            ip: res.ip
+            ip: res.desktopAddress
         }
     };
 }
