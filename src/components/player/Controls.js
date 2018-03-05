@@ -11,35 +11,30 @@ class Controls extends Component {
         return (
             <View style={styles.container}>
                 <View style={styles.controlWrap}>
-                    <View style={[styles.button, styles.first]}>
-                        <TouchableOpacity>
-                            <Icon
-                                name="replay"
-                                size={50}
-                                color='black'
-                            />
-                        </TouchableOpacity>
-                    </View>
 
-                    <View style={styles.button}>
-                        <TouchableOpacity>
-                            <Icon
-                                name="play-arrow"
-                                size={50}
-                                color='black'
-                            />
-                        </TouchableOpacity>
-                    </View>
+                    <TouchableOpacity style={[styles.button, styles.first]}>
+                        <Icon
+                            name="replay"
+                            size={40}
+                            color='black'
+                        />
+                    </TouchableOpacity>
 
-                    <View style={[styles.button, styles.last]}>
-                        <TouchableOpacity>
-                            <Icon
-                                name="navigate-next"
-                                size={50}
-                                color='black'
-                            />
-                        </TouchableOpacity>
-                    </View>
+                    <TouchableOpacity style={styles.button}>
+                        <Icon
+                            name="play-arrow"
+                            size={60}
+                            color='black'
+                        />
+                    </TouchableOpacity>
+
+                    <TouchableOpacity style={[styles.button, styles.last]}>
+                        <Icon
+                            name="navigate-next"
+                            size={50}
+                            color='black'
+                        />
+                    </TouchableOpacity>
                 </View>
             </View>
         );
@@ -48,22 +43,22 @@ class Controls extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
+        // flex: 0.5,
+        height: '15%',
         backgroundColor: 'lightblue'
     },
     controlWrap: {
         flexDirection: 'row',
         flex: 1,
         justifyContent: 'space-around',
-        alignItems: 'center'
     },
     button: {
         backgroundColor: 'white',
         flex: 1,
-        height: '100%',
         justifyContent: 'center',
         alignItems: 'center',
-        borderWidth: 0.5,
+        borderRightWidth: 1,
+        borderLeftWidth: 1,
         borderColor: 'black'
     },
     first: {

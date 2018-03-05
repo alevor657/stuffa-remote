@@ -21,6 +21,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="/home/yooo/code/stuffa-remote/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.53.3/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="71e22619df25643022a7f7281461ef5e926141be">
+        <dex dex="/home/yooo/code/stuffa-remote/android/app/build/intermediates/pre-dexed/debug/com.facebook.react-react-native-0.53.3_88ca15c0adbb086170412650f1b2c4afa4321161.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/root/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.6.0/69edde9fc4b01c9fd51d25b83428837478c27254/okhttp-3.6.0.jar"
         jumboMode="false"
         optimize="true"
@@ -102,6 +111,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="/home/yooo/code/stuffa-remote/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.53.3/jars/libs/infer-annotations-4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="9809e90be788acdb479b2b44e2112f3295a03068">
+        <dex dex="/home/yooo/code/stuffa-remote/android/app/build/intermediates/pre-dexed/debug/infer-annotations-4.0_627206bf4063586e55f5c32a8595fc1b52414a3f.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/root/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
         jumboMode="false"
         optimize="true"
@@ -165,30 +183,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="/home/yooo/code/stuffa-remote/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.52.0/jars/libs/infer-annotations-4.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="9809e90be788acdb479b2b44e2112f3295a03068">
-        <dex dex="/home/yooo/code/stuffa-remote/android/app/build/intermediates/pre-dexed/debug/infer-annotations-4.0_9d9ce35ea9700a0f62f5a991a2001d6b1959c93c.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="/home/yooo/code/stuffa-remote/android/app/build/intermediates/exploded-aar/com.facebook.fbui.textlayoutbuilder/textlayoutbuilder/1.0.0/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
         sha1="f90b593491e4044903f0bbf68dc3fa2790b151b9">
         <dex dex="/home/yooo/code/stuffa-remote/android/app/build/intermediates/pre-dexed/debug/com.facebook.fbui.textlayoutbuilder-textlayoutbuilder-1.0.0_e31c069c0930fc2a658a447243463c61a82ad587.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/yooo/code/stuffa-remote/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.52.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="af61eb11ffb4296cab0c93218248a3dfcec0a84c">
-        <dex dex="/home/yooo/code/stuffa-remote/android/app/build/intermediates/pre-dexed/debug/com.facebook.react-react-native-0.52.0_022b10824623d9b63a203b8f4fe91c71d30e65e0.jar" />
     </item>
 
 </items>
