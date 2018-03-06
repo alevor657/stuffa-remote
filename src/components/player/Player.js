@@ -4,6 +4,7 @@ import { View, StyleSheet } from 'react-native';
 import Controls from './Controls';
 import Settings from './Settings';
 import Tracker from './Tracker';
+import BpmControls from './BpmControls';
 
 class Player extends Component {
     constructor(props) {
@@ -15,7 +16,10 @@ class Player extends Component {
             <View style={styles.container}>
                 <Tracker/>
                 <Settings/>
-                <Controls/>
+                <View style={styles.controlsWrap}>
+                    <BpmControls />
+                    <Controls />
+                </View>
             </View>
         );
     }
@@ -24,9 +28,12 @@ class Player extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: 'red',
         width: '100%',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+    },
+    controlsWrap: {
+        flex: 0.75,
+        justifyContent: 'center'
     }
 });
 
