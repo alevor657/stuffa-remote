@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import { PRIMARY_TEXT, SECONDARY } from '../../constants/colors';
 
 class Controls extends Component {
     constructor(props) {
@@ -16,7 +17,7 @@ class Controls extends Component {
                         <Icon
                             name="replay"
                             size={40}
-                            color='black'
+                            color={PRIMARY_TEXT}
                         />
                     </TouchableOpacity>
 
@@ -24,7 +25,7 @@ class Controls extends Component {
                         <Icon
                             name="play-arrow"
                             size={60}
-                            color='black'
+                            color={PRIMARY_TEXT}
                         />
                     </TouchableOpacity>
 
@@ -32,7 +33,7 @@ class Controls extends Component {
                         <Icon
                             name="navigate-next"
                             size={50}
-                            color='black'
+                            color={PRIMARY_TEXT}
                         />
                     </TouchableOpacity>
                 </View>
@@ -55,6 +56,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
+        backgroundColor: SECONDARY
     },
 });
 

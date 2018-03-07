@@ -14,9 +14,15 @@ class Player extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Tracker/>
-                <Settings/>
-                <View style={styles.controlsWrap}>
+                <View style={styles.trackerContainer}>
+                    <Tracker />
+                </View>
+
+                <View style={styles.settingsContainer}>
+                    <Settings />
+                </View>
+
+                <View style={styles.controlsContainer}>
                     <BpmControls />
                     <Controls />
                 </View>
@@ -30,10 +36,19 @@ const styles = StyleSheet.create({
         flex: 1,
         width: '100%',
         justifyContent: 'space-between',
+        // backgroundColor: '#212121',
+        backgroundColor: '#F5F5F6'
+
     },
-    controlsWrap: {
+    controlsContainer: {
         flex: 0.75,
-        justifyContent: 'center'
+        justifyContent: 'center',
+    },
+    trackerContainer: {
+        flex: 1,
+    },
+    settingsContainer: {
+        flex: 1,
     }
 });
 

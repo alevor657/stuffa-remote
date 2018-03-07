@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import { PRIMARY_TEXT, SECONDARY_LIGHT } from '../../constants/colors';
 
 class BpmControls extends Component {
     constructor(props) {
@@ -16,15 +17,15 @@ class BpmControls extends Component {
                         <Icon
                             name="minus"
                             size={40}
-                            color='black'
+                            color={PRIMARY_TEXT}
                         />
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={[styles.button, styles.last]}>
+                    <TouchableOpacity style={styles.button}>
                         <Icon
                             name="plus"
                             size={40}
-                            color='black'
+                            color={PRIMARY_TEXT}
                         />
                     </TouchableOpacity>
                 </View>
@@ -42,13 +43,14 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         flex: 1,
         justifyContent: 'space-around',
-        borderBottomWidth: 1,
-        borderBottomColor: 'rgba(128, 128, 128, 0.5)'
+        // borderBottomWidth: 1,
+        // borderBottomColor: 'rgba(128, 128, 128, 0.5)'
     },
     button: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
+        backgroundColor: SECONDARY_LIGHT
     },
 });
 
