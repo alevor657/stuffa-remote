@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import { PRIMARY_TEXT, SECONDARY } from '../../constants/colors';
 
 class Controls extends Component {
     constructor(props) {
@@ -12,11 +13,11 @@ class Controls extends Component {
             <View style={styles.container}>
                 <View style={styles.controlWrap}>
 
-                    <TouchableOpacity style={[styles.button, styles.first]}>
+                    <TouchableOpacity style={styles.button}>
                         <Icon
                             name="replay"
                             size={40}
-                            color='black'
+                            color={PRIMARY_TEXT}
                         />
                     </TouchableOpacity>
 
@@ -24,15 +25,15 @@ class Controls extends Component {
                         <Icon
                             name="play-arrow"
                             size={60}
-                            color='black'
+                            color={PRIMARY_TEXT}
                         />
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={[styles.button, styles.last]}>
+                    <TouchableOpacity style={styles.button}>
                         <Icon
                             name="navigate-next"
                             size={50}
-                            color='black'
+                            color={PRIMARY_TEXT}
                         />
                     </TouchableOpacity>
                 </View>
@@ -43,9 +44,8 @@ class Controls extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        // flex: 0.5,
-        height: '15%',
-        backgroundColor: 'lightblue'
+        flex: 1,
+        // height: '15%',
     },
     controlWrap: {
         flexDirection: 'row',
@@ -53,19 +53,10 @@ const styles = StyleSheet.create({
         justifyContent: 'space-around',
     },
     button: {
-        backgroundColor: 'white',
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        borderRightWidth: 1,
-        borderLeftWidth: 1,
-        borderColor: 'black'
-    },
-    first: {
-        borderRightWidth: null
-    },
-    last: {
-        borderLeftWidth: null,
+        backgroundColor: SECONDARY
     },
 });
 
