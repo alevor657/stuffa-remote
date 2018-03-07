@@ -37,16 +37,14 @@ const styles = StyleSheet.create({
         flex: 1,
         width: '100%',
         justifyContent: 'space-between',
-        // backgroundColor: '#212121',
-        backgroundColor: '#F5F5F6'
-
     },
     controlsContainer: {
-        flex: 0.75,
+        // flex: 0.75,
+        height: '20%',
         justifyContent: 'center',
     },
     trackerContainer: {
-        flex: 1,
+        flex: 0.3,
         backgroundColor: PRIMARY
     },
     settingsContainer: {
