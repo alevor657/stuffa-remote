@@ -5,6 +5,7 @@ import Controls from './Controls';
 import Settings from './Settings';
 import Tracker from './Tracker';
 import BpmControls from './BpmControls';
+import { PRIMARY, PRIMARY_LIGHT } from '../../constants/colors';
 
 class Player extends Component {
     constructor(props) {
@@ -46,9 +47,11 @@ const styles = StyleSheet.create({
     },
     trackerContainer: {
         flex: 1,
+        backgroundColor: PRIMARY
     },
     settingsContainer: {
         flex: 1,
+        backgroundColor: PRIMARY
     }
 });
 

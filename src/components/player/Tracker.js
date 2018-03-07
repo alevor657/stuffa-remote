@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Text } from 'react-native';
+import { View, StyleSheet } from 'react-native';
+
+import Heading from '../UI/Text/Heading';
+import PrimaryText from '../UI/Text/PrimaryText';
 
 class Tracker extends Component {
     constructor(props) {
@@ -9,8 +12,8 @@ class Tracker extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text style={styles.songname}>Songname</Text>
-                <Text style={styles.bpm}>BPM</Text>
+                <Heading style={styles.songname}>Songname</Heading>
+                <PrimaryText style={styles.bpm}>BPM</PrimaryText>
             </View>
         );
     }

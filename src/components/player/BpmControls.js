@@ -37,14 +37,11 @@ class BpmControls extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 0.7,
-        // height: '15%',
     },
     controlWrap: {
         flexDirection: 'row',
         flex: 1,
         justifyContent: 'space-around',
-        // borderBottomWidth: 1,
-        // borderBottomColor: 'rgba(128, 128, 128, 0.5)'
     },
     button: {
         flex: 1,
