@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, StyleSheet, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { PRIMARY_TEXT, SECONDARY } from '../../constants/colors';
+import { connect } from 'react-redux';
 
 class Controls extends Component {
     constructor(props) {
@@ -60,4 +61,10 @@ const styles = StyleSheet.create({
     },
 });
 
-export default Controls;
+function mapStateToProps(state, ownProps) {
+    return {
+        ws: state.connection.ws
+    };
+}
+
+export default connect(mapStateToProps)(Controls);

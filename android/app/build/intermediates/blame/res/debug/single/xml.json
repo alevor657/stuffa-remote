@@ -1,14 +1,18 @@
 [
     {
-        "merged": "/home/yooo/code/stuffa-remote/android/app/build/intermediates/res/merged/debug/xml/preferences.xml",
-        "source": "/home/yooo/code/stuffa-remote/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.53.3/res/xml/preferences.xml"
+        "merged": "D:\\home\\yooo\\code\\stuffa-remote\\android\\app\\build\\intermediates\\res\\merged\\debug\\xml\\preferences.xml",
+        "source": "D:\\home\\yooo\\code\\stuffa-remote\\android\\app\\build\\intermediates\\exploded-aar\\com.facebook.react\\react-native\\0.53.3\\res\\xml\\preferences.xml"
     },
     {
-        "merged": "/home/yooo/code/stuffa-remote/android/D:\\home\\yooo\\code\\stuffa-remote\\android\\app\\build\\intermediates\\res\\merged\\debug\\xml\\preferences.xml",
-        "source": "/home/yooo/code/stuffa-remote/android/D:\\home\\yooo\\code\\stuffa-remote\\android\\app\\build\\intermediates\\exploded-aar\\com.facebook.react\\react-native\\0.52.0\\res\\xml\\preferences.xml"
+        "merged": "D:\\cygwin64\\home\\user\\code\\stuffa-remote\\android\\app\\build\\intermediates\\res\\merged\\debug\\xml\\preferences.xml",
+        "source": "D:\\cygwin64\\home\\user\\code\\stuffa-remote\\android\\app\\build\\intermediates\\exploded-aar\\com.facebook.react\\react-native\\0.53.3\\res\\xml\\preferences.xml"
     },
     {
-        "merged": "/home/yooo/code/stuffa-remote/android/D:\\cygwin64\\home\\user\\code\\stuffa-remote\\android\\app\\build\\intermediates\\res\\merged\\debug\\xml\\preferences.xml",
-        "source": "/home/yooo/code/stuffa-remote/android/D:\\cygwin64\\home\\user\\code\\stuffa-remote\\android\\app\\build\\intermediates\\exploded-aar\\com.facebook.react\\react-native\\0.52.0\\res\\xml\\preferences.xml"
+        "merged": "D:\\home\\yooo\\code\\stuffa-remote\\android\\D:\\cygwin64\\home\\user\\code\\stuffa-remote\\android\\app\\build\\intermediates\\res\\merged\\debug\\xml\\preferences.xml",
+        "source": "D:\\home\\yooo\\code\\stuffa-remote\\android\\D:\\cygwin64\\home\\user\\code\\stuffa-remote\\android\\app\\build\\intermediates\\exploded-aar\\com.facebook.react\\react-native\\0.52.0\\res\\xml\\preferences.xml"
+    },
+    {
+        "merged": "D:\\home\\yooo\\code\\stuffa-remote\\android\\D:\\home\\yooo\\code\\stuffa-remote\\android\\app\\build\\intermediates\\res\\merged\\debug\\xml\\preferences.xml",
+        "source": "D:\\home\\yooo\\code\\stuffa-remote\\android\\D:\\home\\yooo\\code\\stuffa-remote\\android\\app\\build\\intermediates\\exploded-aar\\com.facebook.react\\react-native\\0.52.0\\res\\xml\\preferences.xml"
     }
 ]
