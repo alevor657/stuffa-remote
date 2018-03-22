@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native';
+import { connect } from 'react-redux';
 
 import Heading from '../UI/Text/Heading';
 import PrimaryText from '../UI/Text/PrimaryText';
@@ -10,10 +11,12 @@ class Tracker extends Component {
     }
 
     render() {
+        let { bpm, song } = this.props;
+
         return (
             <View style={styles.container}>
-                <Heading style={styles.songname}>Songname</Heading>
-                <PrimaryText style={styles.bpm}>BPM</PrimaryText>
+                <Heading style={styles.songname}>{song}</Heading>
+                <PrimaryText style={styles.bpm}>{bpm}</PrimaryText>
             </View>
         );
     }
@@ -34,4 +37,11 @@ const styles = StyleSheet.create({
     }
 });
 
-export default Tracker;
+function mapStateToProps(state, ownProps) {
+    return {
+        ...ownProps,
+        ...state.player
+    };
+}
+
+export default connect(mapStateToProps)(Tracker);

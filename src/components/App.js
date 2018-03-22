@@ -22,11 +22,13 @@ class App extends Component {
     }
 
     componentDidUpdate() {
+        console.log('CDU', this.props);
         let { connectToDesktop } = this.props;
 
         // Reconnect on failure
         if (this.props.ws) {
             this.props.ws.onclose = () => connectToDesktop();
+            // this.props.ws.onerror = () => connectToDesktop();
         }
     }
 
