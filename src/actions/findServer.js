@@ -36,8 +36,6 @@ export function directConnect(ip) {
 
 function check(i = 0) {
     return new Promise((resolve, reject) => {
-        console.log('Checking ' + `ws://${baseURI}.${i}:${SERVER_PORT}/remote...`);
-
         let ws = new WebSocket(`ws://${baseURI}.${i}:${SERVER_PORT}/remote`);
 
         ws.onopen = () => resolve({

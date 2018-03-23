@@ -27,6 +27,10 @@ export default function connection(state = initialState, action) {
             failCounter: state.failCounter + 1,
             err: action.payload
         };
+    case types.CONNECTION_DESTROYED:
+        return {
+            ...initialState
+        };
     default:
         return state;
     }

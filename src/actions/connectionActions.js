@@ -26,7 +26,10 @@ export function connectToDesktop(ip = null) {
     console.log('ATTEMPTING CONNECT');
     return function(dispatch) {
         return determineConnectionType(ip).then( res => {
-            res.ws.onclose = () => dispatch(connectToDesktop());
+            res.ws.onclose = () => {
+                dispatch(connectionDied());
+                dispatch(connectToDesktop());
+            };
 
             dispatch(connectionSuccess(res));
         }).catch( err => {
@@ -36,6 +39,12 @@ export function connectToDesktop(ip = null) {
                 () => dispatch(openModal())
             );
         });
+    };
+}
+
+function connectionDied() {
+    return {
+        type: types.CONNECTION_DESTROYED
     };
 }
 
