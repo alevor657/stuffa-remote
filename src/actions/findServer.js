@@ -45,13 +45,13 @@ function check(i = 0) {
             desktopAddress: `${baseURI}.${i}`
         });
 
-        // ws.onclose = e => setTimeout(function(e) {
-        //     reject(e.message);
-        // }, 5000, e);
+        ws.onclose = e => setTimeout(function(e) {
+            reject(e.message);
+        }, 5000, e);
 
-        // ws.onerror = e => setTimeout(function (e) {
-        //     reject(e.message);
-        // }, 5000, e);
+        ws.onerror = e => setTimeout(function (e) {
+            reject(e.message);
+        }, 5000, e);
 
         // ws.onclose = function (e) {
         //     console.log('TIMEOUT EXPIRED');
@@ -63,11 +63,11 @@ function check(i = 0) {
         //     return reject(e.message);
         // };
 
-        let t = setTimeout(() => {
-            ws.close();
-            clearTimeout(t);
-            reject('Timeout expired');
-        }, 5000);
+        // let t = setTimeout(() => {
+        //     ws.close();
+        //     clearTimeout(t);
+        //     reject('Timeout expired');
+        // }, 5000);
 
         // let t = setTimeout(reject, 5000, 'Timeout');
     });

@@ -3,6 +3,9 @@ import { View, StyleSheet, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { PRIMARY_TEXT, SECONDARY } from '../../constants/colors';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
+import { play, pause, replay, nextTrack } from '../../actions/playerActions';
 
 class Controls extends Component {
     constructor(props) {
@@ -22,7 +25,10 @@ class Controls extends Component {
                         />
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={styles.button}>
+                    <TouchableOpacity
+                        style={styles.button}
+                        onPress={this.props.play}
+                    >
                         <Icon
                             name="play-arrow"
                             size={60}
@@ -63,9 +69,18 @@ const styles = StyleSheet.create({
 
 function mapStateToProps(state, ownProps) {
     return {
-        ws: state.connection.ws,
+        // ws: state.connection.ws,
         ...ownProps
     };
 }
 
-export default connect(mapStateToProps)(Controls);
+function mapDispatchToProps(dispatch) {
+    return {
+        play: bindActionCreators(play, dispatch),
+        pause: bindActionCreators(pause, dispatch),
+        replay: bindActionCreators(replay, dispatch),
+        nextTrack: bindActionCreators(nextTrack, dispatch)
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Controls);

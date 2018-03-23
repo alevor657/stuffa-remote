@@ -26,6 +26,8 @@ export function connectToDesktop(ip = null) {
     console.log('ATTEMPTING CONNECT');
     return function(dispatch) {
         return determineConnectionType(ip).then( res => {
+            res.ws.onclose = () => dispatch(connectToDesktop());
+
             dispatch(connectionSuccess(res));
         }).catch( err => {
             dispatch(connectionFailure(err));

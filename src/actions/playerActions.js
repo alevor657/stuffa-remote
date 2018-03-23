@@ -2,16 +2,22 @@ import * as types from '../constants/actionTypes';
 
 export function play() {
     console.log('PLAY');
-    return {
-        action: types.PLAY,
-        payload: null
+    return (dispatch, getState) => {
+        let { ws } = getState().connection,
+            msg = {
+                type: types.PLAY,
+                payload: null
+            };
+
+        console.log('ws', ws);
+        ws.send(JSON.stringify(msg));
     };
 }
 
 export function pause() {
     console.log('PAUSE');
     return {
-        action: types.PAUSE,
+        type: types.PAUSE,
         payload: null
     };
 }
@@ -19,7 +25,7 @@ export function pause() {
 export function replay() {
     console.log('REPLAY');
     return {
-        action: types.REPLAY,
+        type: types.REPLAY,
         payload: null
     };
 }
@@ -27,7 +33,15 @@ export function replay() {
 export function nextTrack() {
     console.log('NEXT TRACK');
     return {
-        action: types.NEXT_TRACK,
+        type: types.NEXT_TRACK,
         payload: null
     };
+}
+
+function SyncSuccess() {
+
+}
+
+function SyncFailure() {
+
 }

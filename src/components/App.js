@@ -26,10 +26,14 @@ class App extends Component {
         let { connectToDesktop } = this.props;
 
         // Reconnect on failure
-        if (this.props.ws) {
-            this.props.ws.onclose = () => connectToDesktop();
-            // this.props.ws.onerror = () => connectToDesktop();
-        }
+        // if (this.props.ws) {
+        //     this.props.ws.onclose = () => connectToDesktop();
+        //     // this.props.ws.onerror = () => connectToDesktop();
+
+        //     if (this.props.ws.readyState !== 1) {
+        //         connectToDesktop();
+        //     }
+        // }
     }
 
     render() {
