@@ -38,18 +38,35 @@ function check(i = 0) {
     return new Promise((resolve, reject) => {
         let ws = new WebSocket(`ws://${baseURI}.${i}:${SERVER_PORT}/remote`);
 
-        ws.onopen = () => resolve({
-            ws,
-            desktopAddress: `${baseURI}.${i}`
-        });
+        // ws.onopen = () => resolve({
+        //     ws,
+        //     desktopAddress: `${baseURI}.${i}`
+        // });
 
-        ws.onclose = e => setTimeout(function(e) {
-            reject(e.message);
-        }, 5000, e);
+        let t = setTimeout((e) => {
+            ws.removeEventListener('open', resolver);
+            reject(e);
+        }, 3000, 'Timeouted');
 
-        ws.onerror = e => setTimeout(function (e) {
-            reject(e.message);
-        }, 5000, e);
+        let resolver = function () {
+            clearTimeout(t);
+            resolve({
+                ws,
+                desktopAddress: `${baseURI}.${i}`
+            });
+        };
+
+        ws.addEventListener('open', resolver);
+
+
+
+        // ws.onclose = e => setTimeout(function(e) {
+        //     reject(e.message);
+        // }, 5000, e);
+
+        // ws.onerror = e => setTimeout(function (e) {
+        //     reject(e.message);
+        // }, 5000, e);
 
         // ws.onclose = function (e) {
         //     console.log('TIMEOUT EXPIRED');
