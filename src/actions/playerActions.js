@@ -1,7 +1,7 @@
 import * as types from '../constants/actionTypes';
 
 export function play() {
-    console.log('PLAY');
+    console.log('SENDING PLAY');
     return (dispatch, getState) => {
         let { ws } = getState().connection,
             msg = {
@@ -9,39 +9,71 @@ export function play() {
                 payload: null
             };
 
-        console.log('ws', ws);
+        ws.send(JSON.stringify(msg));
+
+        return dispatch(playSuccess());
+    };
+}
+
+function playSuccess() {
+    return {
+        type: types.PLAY_SUCCESS
+    };
+}
+
+// playFailure
+
+export function pause() {
+    console.log('SENDING PAUSE');
+    return (dispatch, getState) => {
+        let { ws } = getState().connection;
+
+        let msg = {
+            type: types.PAUSE,
+            payload: null
+        };
+
+        ws.send(JSON.stringify(msg));
+
+        return dispatch(pauseSuccess());                
+    };
+}
+
+function pauseSuccess() {
+    return {
+        type: types.PAUSE_SUCCESS
+    };
+}
+
+// pauseFailure
+
+export function replay() {
+    console.log('SENDING REPLAY');
+    return (dispatch, getState) => {
+        let { ws } = getState().connection,
+            msg = {
+                type: types.REPLAY,
+                payload: null
+            };
+
         ws.send(JSON.stringify(msg));
     };
 }
 
-export function pause() {
-    console.log('PAUSE');
-    return {
-        type: types.PAUSE,
-        payload: null
-    };
-}
-
-export function replay() {
-    console.log('REPLAY');
-    return {
-        type: types.REPLAY,
-        payload: null
-    };
-}
-
 export function nextTrack() {
-    console.log('NEXT TRACK');
-    return {
-        type: types.NEXT_TRACK,
-        payload: null
+    console.log('SENDING NEXT_TRACK');
+    return (dispatch, getState) => {
+        let { ws } = getState().connection,
+            msg = {
+                type: types.NEXT_TRACK,
+                payload: null
+            };
+
+        ws.send(JSON.stringify(msg));
     };
 }
 
-function SyncSuccess() {
-
-}
-
-function SyncFailure() {
-
+function sync() {
+    console.log('sync');
+    
 }

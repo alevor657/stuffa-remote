@@ -2,6 +2,7 @@ import findServer, { directConnect } from './findServer';
 import * as types from '../constants/actionTypes';
 import drawAlert from '../components/drawAlert';
 import { openModal, closeModal } from '../actions/modalActions';
+import handler from '../messageHandler';
 
 export function connectionSuccess(res) {
     console.log('SUCCESS', res);
@@ -26,11 +27,7 @@ export function connectToDesktop(ip = null) {
     console.log('ATTEMPTING CONNECT');
     return function(dispatch) {
         return determineConnectionType(ip).then( res => {
-            res.ws.onclose = () => {
-                dispatch(connectionDied());
-                dispatch(connectToDesktop());
-            };
-
+            bootstrapWebsocket(res.ws, dispatch);
             dispatch(connectionSuccess(res));
         }).catch( err => {
             dispatch(connectionFailure(err));
@@ -40,6 +37,15 @@ export function connectToDesktop(ip = null) {
             );
         });
     };
+}
+
+function bootstrapWebsocket(ws, dispatch) {
+    ws.onmessage = handler;
+
+    ws.onclose = ws.onerror = function() {
+        dispatch(connectionDied());
+        dispatch(connectToDesktop());
+    }
 }
 
 function connectionDied() {

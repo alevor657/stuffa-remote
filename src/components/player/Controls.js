@@ -13,11 +13,16 @@ class Controls extends Component {
     }
 
     render() {
+        let { play, pause, replay, next, isPlaying } = this.props;
+
         return (
             <View style={styles.container}>
                 <View style={styles.controlWrap}>
 
-                    <TouchableOpacity style={styles.button}>
+                    <TouchableOpacity
+                        style={styles.button}
+                        onPress={replay}                        
+                    >
                         <Icon
                             name="replay"
                             size={40}
@@ -27,16 +32,19 @@ class Controls extends Component {
 
                     <TouchableOpacity
                         style={styles.button}
-                        onPress={this.props.play}
+                        onPress={isPlaying ? pause : play}
                     >
                         <Icon
-                            name="play-arrow"
+                            name={isPlaying ? 'pause' : 'play-arrow'}
                             size={60}
                             color={PRIMARY_TEXT}
                         />
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={styles.button}>
+                    <TouchableOpacity 
+                        style={styles.button}
+                        onPress={next}
+                    >
                         <Icon
                             name="navigate-next"
                             size={50}
@@ -69,7 +77,7 @@ const styles = StyleSheet.create({
 
 function mapStateToProps(state, ownProps) {
     return {
-        // ws: state.connection.ws,
+        isPlaying: state.player.isPlaying,
         ...ownProps
     };
 }
@@ -79,7 +87,7 @@ function mapDispatchToProps(dispatch) {
         play: bindActionCreators(play, dispatch),
         pause: bindActionCreators(pause, dispatch),
         replay: bindActionCreators(replay, dispatch),
-        nextTrack: bindActionCreators(nextTrack, dispatch)
+        next: bindActionCreators(nextTrack, dispatch)
     }
 }
 
