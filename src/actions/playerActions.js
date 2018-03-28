@@ -5,7 +5,7 @@ export function play() {
     return (dispatch, getState) => {
         let { ws } = getState().connection,
             msg = {
-                type: types.PLAY,
+                action: types.PLAY,
                 payload: null
             };
 
@@ -17,7 +17,7 @@ export function play() {
 
 function playSuccess() {
     return {
-        type: types.PLAY_SUCCESS
+        action: types.PLAY_SUCCESS
     };
 }
 
@@ -29,7 +29,7 @@ export function pause() {
         let { ws } = getState().connection;
 
         let msg = {
-            type: types.PAUSE,
+            action: types.PAUSE,
             payload: null
         };
 
@@ -41,7 +41,7 @@ export function pause() {
 
 function pauseSuccess() {
     return {
-        type: types.PAUSE_SUCCESS
+        action: types.PAUSE_SUCCESS
     };
 }
 
@@ -52,7 +52,7 @@ export function replay() {
     return (dispatch, getState) => {
         let { ws } = getState().connection,
             msg = {
-                type: types.REPLAY,
+                action: types.REPLAY,
                 payload: null
             };
 
@@ -65,7 +65,7 @@ export function nextTrack() {
     return (dispatch, getState) => {
         let { ws } = getState().connection,
             msg = {
-                type: types.NEXT_TRACK,
+                action: types.NEXT_TRACK,
                 payload: null
             };
 
