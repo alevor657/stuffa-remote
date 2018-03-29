@@ -5,19 +5,19 @@ export function play() {
     return (dispatch, getState) => {
         let { ws } = getState().connection,
             msg = {
-                action: types.PLAY,
+                type: types.PLAY,
                 payload: null
             };
 
         ws.send(JSON.stringify(msg));
 
-        return dispatch(playSuccess());
+        return {type: ''};
     };
 }
 
 function playSuccess() {
     return {
-        action: types.PLAY_SUCCESS
+        type: types.PLAY_SUCCESS
     };
 }
 
@@ -29,7 +29,7 @@ export function pause() {
         let { ws } = getState().connection;
 
         let msg = {
-            action: types.PAUSE,
+            type: types.PAUSE,
             payload: null
         };
 
@@ -41,7 +41,7 @@ export function pause() {
 
 function pauseSuccess() {
     return {
-        action: types.PAUSE_SUCCESS
+        type: types.PAUSE_SUCCESS
     };
 }
 
@@ -52,7 +52,7 @@ export function replay() {
     return (dispatch, getState) => {
         let { ws } = getState().connection,
             msg = {
-                action: types.REPLAY,
+                type: types.REPLAY,
                 payload: null
             };
 
@@ -65,7 +65,7 @@ export function nextTrack() {
     return (dispatch, getState) => {
         let { ws } = getState().connection,
             msg = {
-                action: types.NEXT_TRACK,
+                type: types.NEXT_TRACK,
                 payload: null
             };
 
@@ -74,6 +74,7 @@ export function nextTrack() {
 }
 
 function sync() {
-    console.log('sync');
+    
     
 }
+

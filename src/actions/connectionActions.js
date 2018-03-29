@@ -40,7 +40,10 @@ export function connectToDesktop(ip = null) {
 }
 
 function bootstrapWebsocket(ws, dispatch) {
-    ws.onmessage = handler;
+    ws.onmessage = function(msg) {
+        console.log('Message: ', msg.data);
+        dispatch(JSON.parse(msg.data));
+    };
 
     ws.onclose = ws.onerror = function() {
         dispatch(connectionDied());
