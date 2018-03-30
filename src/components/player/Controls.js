@@ -5,7 +5,7 @@ import { PRIMARY_TEXT, SECONDARY } from '../../constants/colors';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { play, pause, replay, nextTrack } from '../../actions/playerActions';
+import { play, pause, replay, nextTrack } from './playerActions';
 
 class Controls extends Component {
     constructor(props) {
@@ -13,7 +13,7 @@ class Controls extends Component {
     }
 
     render() {
-        let { play, pause, replay, next, isPlaying } = this.props;
+        let { isPlaying, ws } = this.props;
 
         return (
             <View style={styles.container}>
@@ -21,7 +21,7 @@ class Controls extends Component {
 
                     <TouchableOpacity
                         style={styles.button}
-                        onPress={replay}                        
+                        onPress={() => replay(ws)}                        
                     >
                         <Icon
                             name="replay"
@@ -32,7 +32,7 @@ class Controls extends Component {
 
                     <TouchableOpacity
                         style={styles.button}
-                        onPress={isPlaying ? pause : play}
+                        onPress={isPlaying ? () => pause(ws) : () => play(ws)}
                     >
                         <Icon
                             name={isPlaying ? 'pause' : 'play-arrow'}
@@ -43,7 +43,7 @@ class Controls extends Component {
 
                     <TouchableOpacity 
                         style={styles.button}
-                        onPress={next}
+                        onPress={() => nextTrack(ws)}
                     >
                         <Icon
                             name="navigate-next"
@@ -78,17 +78,9 @@ const styles = StyleSheet.create({
 function mapStateToProps(state, ownProps) {
     return {
         isPlaying: state.player.isPlaying,
+        ws: state.connection.ws,
         ...ownProps
     };
 }
 
-function mapDispatchToProps(dispatch) {
-    return {
-        play: bindActionCreators(play, dispatch),
-        pause: bindActionCreators(pause, dispatch),
-        replay: bindActionCreators(replay, dispatch),
-        next: bindActionCreators(nextTrack, dispatch)
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Controls);
+export default connect(mapStateToProps)(Controls);

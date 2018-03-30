@@ -16,4 +16,4 @@ export const PAUSE_SUCCESS = 'PAUSE_SUCCESS';
 export const PAUSE_FAILURE = 'PAUSE_FAILURE';
 
 // ?
-export const SYNC_PLAYER = 'SYNC_PLAYER';
+export const STATE_UPDATE = 'STATE_UPDATE';

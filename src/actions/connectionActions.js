@@ -2,7 +2,6 @@ import findServer, { directConnect } from './findServer';
 import * as types from '../constants/actionTypes';
 import drawAlert from '../components/drawAlert';
 import { openModal, closeModal } from '../actions/modalActions';
-import handler from '../messageHandler';
 
 export function connectionSuccess(res) {
     console.log('SUCCESS', res);

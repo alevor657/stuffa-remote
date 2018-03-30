@@ -6,6 +6,13 @@ let initialState = {
     bpm: 0,
 };
 
+/**
+ * This reducer does not have corresponding action creators because actions dispatch as is
+ * from desktop.
+ * 
+ * @param {obj} state Redux state
+ * @param {obj} action Redux action
+ */
 export default function player(state = initialState, action) {
     console.log(action);
     switch (action.type) {
@@ -28,6 +35,9 @@ export default function player(state = initialState, action) {
         return {
 
         };
+    case types.STATE_UPDATE:
+        console.log(action.payload);
+        return {...state};
     default:
         return state;
     }
