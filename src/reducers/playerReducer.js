@@ -3,6 +3,7 @@ import * as types from '../constants/actionTypes';
 let initialState = {
     isPlaying: false,
     song: '',
+    artist: '',
     bpm: 0,
 };
 
@@ -35,9 +36,14 @@ export default function player(state = initialState, action) {
         return {
 
         };
-    case types.STATE_UPDATE:
-        console.log(action.payload);
-        return {...state};
+    case types.REQUEST_STATE_SUCCESS: {
+        const playerState = JSON.parse(action.payload);
+
+        return {
+            ...state,
+            ...playerState
+        };
+    }
     default:
         return state;
     }

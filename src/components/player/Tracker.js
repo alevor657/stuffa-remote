@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 import Heading from '../UI/Text/Heading';
 import PrimaryText from '../UI/Text/PrimaryText';
+import SecondaryText from '../UI/Text/SecondaryText';
 
 class Tracker extends Component {
     constructor(props) {
@@ -11,11 +12,12 @@ class Tracker extends Component {
     }
 
     render() {
-        let { bpm, song } = this.props;
+        let { bpm, song, artist } = this.props;
 
         return (
             <View style={styles.container}>
                 <Heading style={styles.songname}>{song}</Heading>
+                <SecondaryText>{artist}</SecondaryText>
                 <PrimaryText style={styles.bpm}>{bpm}</PrimaryText>
             </View>
         );

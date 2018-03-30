@@ -5,11 +5,15 @@ import { PRIMARY_TEXT, SECONDARY } from '../../constants/colors';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { play, pause, replay, nextTrack } from './playerActions';
+import { play, pause, replay, nextTrack, requestState } from './playerActions';
 
 class Controls extends Component {
     constructor(props) {
         super(props);
+    }
+
+    componentDidMount() {
+        requestState(this.props.ws);
     }
 
     render() {

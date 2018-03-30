@@ -11,11 +11,6 @@ function generateMessage(type, payload = null) {
     });
 }
 
-export function requestState(ws) {
-    console.log('SENDING REQUEST STATE');
-    ws.send(generateMessage(types.STATE_UPDATE));
-}
-
 export function play(ws) {
     console.log('SENDING PLAY');
     ws.send(generateMessage(types.PLAY));
@@ -36,3 +31,7 @@ export function nextTrack(ws) {
     ws.send(generateMessage(types.NEXT_TRACK));    
 }
 
+export function requestState(ws) {
+    console.log('SENDING REQUEST STATE');
+    ws.send(generateMessage(types.REQUEST_STATE));
+}
