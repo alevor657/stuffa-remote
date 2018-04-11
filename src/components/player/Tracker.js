@@ -18,7 +18,7 @@ class Tracker extends Component {
             <View style={styles.container}>
                 <Heading style={styles.songname}>{song}</Heading>
                 <SecondaryText>{artist}</SecondaryText>
-                <PrimaryText style={styles.bpm}>{bpm}</PrimaryText>
+                <PrimaryText style={styles.bpm}>{parseInt(bpm) ? '' : bpm}</PrimaryText>
             </View>
         );
     }

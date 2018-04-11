@@ -2,9 +2,12 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View, Button, ActivityIndicator } from 'react-native';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+
 import { connectToDesktop } from '../actions/connectionActions';
 import ManualAddressInput from './manualInputModal';
 import Player from './player/Player';
+import PrimaryText from './UI/Text/PrimaryText'; 
+import { BACKGROUND_LIGHT, COLORED } from '../constants/colors';
 
 class App extends Component {
     constructor(props) {
@@ -18,22 +21,12 @@ class App extends Component {
     }
 
     componentWillUnmount() {
-        this.ws.close();
+        // this.ws.close();
     }
 
     componentDidUpdate() {
         console.log('CDU', this.props);
         let { connectToDesktop } = this.props;
-
-        // Reconnect on failure
-        // if (this.props.ws) {
-        //     this.props.ws.onclose = () => connectToDesktop();
-        //     // this.props.ws.onerror = () => connectToDesktop();
-
-        //     if (this.props.ws.readyState !== 1) {
-        //         connectToDesktop();
-        //     }
-        // }
     }
 
     render() {
@@ -42,9 +35,9 @@ class App extends Component {
                 {this.props.ws ? (
                     <Player />
                 ) : (
-                    <View>
-                        <ActivityIndicator size="large" color="#0000ff" />
-                        <Text>Connecting</Text>
+                    <View style={styles.activityContainer}>
+                        <ActivityIndicator size="large" color={COLORED} />
+                        <PrimaryText style={styles.connectingText}>Connecting</PrimaryText>
                     </View>
                 )}
                 {this.props.modalVisible && <ManualAddressInput/>}
@@ -56,10 +49,19 @@ class App extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: BACKGROUND_LIGHT,
         alignItems: 'center',
         justifyContent: 'center',
     },
+    activityContainer: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '100%'
+    },
+    connectingText: {
+        marginTop: 13
+    }
 });
 
 function mapStateToProps(state, ownProps) {
