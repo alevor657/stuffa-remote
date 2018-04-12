@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     trackerContainer: {
-        flex: 0.3,
+        flex: 0.4,
         backgroundColor: PRIMARY
     },
     settingsContainer: {

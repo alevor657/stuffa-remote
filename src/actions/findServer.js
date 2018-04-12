@@ -3,21 +3,57 @@ import { SERVER_PORT } from '../constants';
 let baseURI = '192.168.1';
 // let baseURI = '193.11.185';
 
+/**
+ * For dev
+ */
+let devIp = '192.168.1.63';
+
+/**
+ * For dev
+ */
 export default function findServer() {
-    console.log('CONNECTING...');
+    return directConnect(devIp);
+}
 
-    let promises = [];
+/**
+ * Production
+ */
+// export default function findServer() {
+//     console.log('CONNECTING...');
 
-    for (let i = 0; i < 256; i++) {
-        promises.push(check(i));
-    }
+//     let promises = [],
+//         lastIPSector = 0;
 
-    let res = Promise.race(promises);
+//     for (let i = 0; i < 256; i++) {
+//         promises.push(check(i));
+//     }
 
-    // delete propmises;
-    promises = null;
+//     let res = Promise.race(promises);
 
-    return res;
+//     return res;
+// }
+
+
+function check(i = 0) {
+    return new Promise((resolve, reject) => {
+        let ws = new WebSocket(`ws://${baseURI}.${i}:${SERVER_PORT}/remote`);
+
+        let t = setTimeout((e) => {
+            ws.removeEventListener('open', resolver);
+            ws.close();
+            reject(e);
+        }, 3000, 'Timeouted');
+
+        let resolver = function () {
+            clearTimeout(t);
+            resolve({
+                ws,
+                desktopAddress: `${baseURI}.${i}`
+            });
+        };
+
+        ws.addEventListener('open', resolver);
+    });
 }
 
 export function directConnect(ip) {
@@ -31,59 +67,5 @@ export function directConnect(ip) {
             desktopAddress: ip
         });
         ws.onclose = e => reject(e.message);
-    });
-}
-
-function check(i = 0) {
-    return new Promise((resolve, reject) => {
-        let ws = new WebSocket(`ws://${baseURI}.${i}:${SERVER_PORT}/remote`);
-
-        // ws.onopen = () => resolve({
-        //     ws,
-        //     desktopAddress: `${baseURI}.${i}`
-        // });
-
-        let t = setTimeout((e) => {
-            ws.removeEventListener('open', resolver);
-            reject(e);
-        }, 3000, 'Timeouted');
-
-        let resolver = function () {
-            clearTimeout(t);
-            resolve({
-                ws,
-                desktopAddress: `${baseURI}.${i}`
-            });
-        };
-
-        ws.addEventListener('open', resolver);
-
-
-
-        // ws.onclose = e => setTimeout(function(e) {
-        //     reject(e.message);
-        // }, 5000, e);
-
-        // ws.onerror = e => setTimeout(function (e) {
-        //     reject(e.message);
-        // }, 5000, e);
-
-        // ws.onclose = function (e) {
-        //     console.log('TIMEOUT EXPIRED');
-        //     return reject(e.message);
-        // };
-
-        // ws.onerror = function (e) {
-        //     console.log('TIMEOUT EXPIRED');
-        //     return reject(e.message);
-        // };
-
-        // let t = setTimeout(() => {
-        //     ws.close();
-        //     clearTimeout(t);
-        //     reject('Timeout expired');
-        // }, 5000);
-
-        // let t = setTimeout(reject, 5000, 'Timeout');
     });
 }
