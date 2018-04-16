@@ -5,6 +5,7 @@ let initialState = {
     song: '',
     artist: '',
     bpm: 0,
+    soundLevel: 0
 };
 
 /**
@@ -15,14 +16,17 @@ let initialState = {
  * @param {obj} action Redux action
  */
 export default function player(state = initialState, action) {
-    console.log(action);
     switch (action.type) {
     case types.PLAY_SUCCESS:
         return {
             ...state,
             isPlaying: true
         };
-
+    case types.SET_SOUND: 
+        return {
+            ...state,
+            soundLevel: action.payload
+        };
     case types.PAUSE_SUCCESS:
         return {
             ...state,

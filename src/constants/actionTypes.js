@@ -15,6 +15,8 @@ export const PAUSE = 'PAUSE';
 export const PAUSE_SUCCESS = 'PAUSE_SUCCESS';
 export const PAUSE_FAILURE = 'PAUSE_FAILURE';
 
+export const SET_SOUND = 'SET_SOUND';
+
 // ?
 export const REQUEST_STATE = 'REQUEST_STATE';
 export const REQUEST_STATE_SUCCESS = 'REQUEST_STATE_SUCCESS';

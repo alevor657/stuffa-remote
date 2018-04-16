@@ -4,21 +4,19 @@ import { View, StyleSheet } from 'react-native';
 class SoundLevel extends Component {
     constructor(props) {
         super(props);
-
-        this.state = {
-            level: 50
-        };
-    }
-
-    getWidth() {
-        return `${this.state.level}%`;
     }
 
     render() {
+        // dev
+        if (this.props.level > 100 || this.props.level < 0) {
+            throw new Error('BAD LEVEL VALUE');
+        }
+
+
         return (
             <View style={[styles.bar, {
-                width: this.getWidth(),
-                opacity: this.state.level / 100
+                width: `${this.props.level}%`,
+                opacity: this.props.level / 100
             }, this.props.style]}>
 
             </View>
