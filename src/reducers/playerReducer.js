@@ -5,7 +5,10 @@ let initialState = {
     song: '',
     artist: '',
     bpm: 0,
-    soundLevel: 0
+    soundLevel: 0,
+    bpmInterval: 0,
+    bpmJump: 0,
+    autoBpm: false
 };
 
 /**
@@ -22,24 +25,30 @@ export default function player(state = initialState, action) {
             ...state,
             isPlaying: true
         };
-    case types.SET_SOUND: 
-        return {
-            ...state,
-            soundLevel: action.payload
-        };
     case types.PAUSE_SUCCESS:
         return {
             ...state,
             isPlaying: false
         };
-    case types.NEXT_TRACK_SUCCESS:
+    case types.SET_SOUND: 
         return {
-
+            ...state,
+            soundLevel: action.payload
         };
-    case types.REPLAY_SUCCESS:
+    case types.BPM_AUTOPLAY_TOGGLE:
         return {
-
+            ...state,
+            autoBpm: !state.autoBpm                        
         };
+
+    // case types.NEXT_TRACK_SUCCESS:
+    //     return {
+    //         ...state,
+    //     };
+    // case types.REPLAY_SUCCESS:
+    //     return {
+
+    //     };
     case types.REQUEST_STATE_SUCCESS: {
         const playerState = JSON.parse(action.payload);
 

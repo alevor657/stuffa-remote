@@ -15,6 +15,7 @@ const PrimaryText = props => (
 const styles = StyleSheet.create({
     primaryText: {
         fontSize: 16,
+        lineHeight: 16,
         fontFamily: 'Roboto',
         color: PRIMARY_TEXT
     }

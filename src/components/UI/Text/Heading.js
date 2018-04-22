@@ -15,6 +15,7 @@ const Heading = props => (
 const styles = StyleSheet.create({
     heading: {
         fontSize: 24,
+        // lineHeight: 24,
         fontFamily: 'Roboto',
         color: SECONDARY_TEXT
     }

@@ -33,6 +33,13 @@ export default function findServer() {
 //     return res;
 // }
 
+ /**
+  * TODO: 
+  * 
+  * Bug with connect directley
+  * Fix remembering of ip
+  */
+
 
 function check(i = 0) {
     return new Promise((resolve, reject) => {

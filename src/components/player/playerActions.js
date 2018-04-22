@@ -35,3 +35,13 @@ export function requestState(ws) {
     console.log('SENDING REQUEST STATE');
     ws.send(generateMessage(types.REQUEST_STATE));
 }
+
+export function setSound(ws, payload = null) {
+    console.log('SENDING setSound');
+    ws.send(generateMessage(types.SET_SOUND), payload);
+}
+
+export function toggleAutoBpm(ws) {
+    console.log('SENDING BPM_AUTOPLAY_TOGGLE');
+    ws.send(generateMessage(types.BPM_AUTOPLAY_TOGGLE));
+}

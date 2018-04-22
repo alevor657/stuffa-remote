@@ -15,6 +15,7 @@ const SecondaryText = props => (
 const styles = StyleSheet.create({
     secondaryText: {
         fontSize: 16,
+        lineHeight: 16,
         fontFamily: 'Roboto',
         color: SECONDARY_TEXT
     }

@@ -40,6 +40,8 @@ class Tracker extends Component {
         (result > 100) && (result = 100);
         console.log('CURRENT', currentLevel);
         console.log('RESULT', result);
+
+        
     }
 
     render() {
@@ -55,9 +57,9 @@ class Tracker extends Component {
                     style={styles.soundBar}
                     level={soundLevel}
                 />                                        
-                <Heading style={styles.songname}>{song}</Heading>
-                <SecondaryText>{artist}</SecondaryText>
-                <PrimaryText style={styles.bpm}>{parseInt(bpm) ? '' : bpm}</PrimaryText>
+                <Heading numberOfLines={1} style={styles.songname}>{song}</Heading>
+                <SecondaryText numberOfLines={1}>{artist}</SecondaryText>
+                <PrimaryText style={styles.bpm}>{bpm ? bpm : ''}</PrimaryText>
             </GestureRecognizer>            
         );
     }
@@ -68,11 +70,11 @@ const styles = StyleSheet.create({
         flex: 1,
         // justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: 'red'
     },
     songname: {
         fontSize: 30,
-        marginBottom: 25
+        marginBottom: 25,
+        textAlign: 'center'        
     },
     bpm: {
         fontWeight: 'bold'
