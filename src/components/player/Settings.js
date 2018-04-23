@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import PrimaryText from '../UI/Text/PrimaryText';
 import { COLORED, SECONDARY_LIGHT } from '../../constants/colors';
-import { toggleAutoBpm } from '../player/playerActions';
+import { toggleAutoBpm } from '../player/playerAPI';
 
 class Settings extends Component {
     constructor(props) {
@@ -23,8 +23,7 @@ class Settings extends Component {
             <View style={styles.container}>
                 <TouchableOpacity
                     onPress={this.onPressAutoplay}
-                    style={styles.row}
-                    underlayColor={SECONDARY_LIGHT}
+                    style={[styles.row, styles.borderBottom, styles.borderTop]}
                 >
                     <View style={styles.innerRow}>
                         <PrimaryText>BPM autoplay: </PrimaryText>
@@ -35,16 +34,16 @@ class Settings extends Component {
                         />
                     </View>
                 </TouchableOpacity>
-                <View style={styles.row}>
+                <TouchableOpacity style={[styles.row, styles.borderBottom]}>
                     <View style={styles.innerRow}>
                         <PrimaryText>BPM interval: </PrimaryText>
                     </View>
-                </View>
-                <View style={styles.row}>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.row}>
                     <View style={styles.innerRow}>
                         <PrimaryText>BPM hopp: </PrimaryText>
                     </View>
-                </View>
+                </TouchableOpacity>
             </View>
         );
     }
@@ -68,6 +67,14 @@ const styles = StyleSheet.create({
         alignContent: 'center',
         // backgroundColor: 'lightblue', //dev
         padding: 15        
+    },
+    borderBottom: {
+        borderBottomWidth: 1,
+        borderBottomColor: COLORED
+    },
+    borderTop: {
+        borderTopWidth: 1,
+        borderTopColor: COLORED
     }
 });
 

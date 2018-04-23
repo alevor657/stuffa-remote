@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Dimensions } from 'react-native';
+import { StyleSheet, Dimensions, View } from 'react-native';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import GestureRecognizer, { swipeDirections } from 'react-native-swipe-gestures';
 
 import Heading from '../UI/Text/Heading';
@@ -9,7 +8,7 @@ import PrimaryText from '../UI/Text/PrimaryText';
 import SecondaryText from '../UI/Text/SecondaryText';
 import SoundLevel from './SoundLevel';
 import { COLORED } from '../../constants/colors';
-import { setSound } from '../../actions/playerActions'; 
+import { setSound } from './playerAPI'; 
 
 class Tracker extends Component {
     constructor(props) {
@@ -41,26 +40,34 @@ class Tracker extends Component {
         console.log('CURRENT', currentLevel);
         console.log('RESULT', result);
 
-        
+        setSound(this.props.ws, result);
     }
 
     render() {
         let { bpm, song, artist, soundLevel } = this.props;
 
         return (
-            <GestureRecognizer
-                onSwipe={(dir, state) => this.onSwipe(dir, state)}
-                style={styles.container}
-                config={{ velocityThreshold: 0 }}
-            >
-                <SoundLevel
-                    style={styles.soundBar}
-                    level={soundLevel}
-                />                                        
-                <Heading numberOfLines={1} style={styles.songname}>{song}</Heading>
-                <SecondaryText numberOfLines={1}>{artist}</SecondaryText>
-                <PrimaryText style={styles.bpm}>{bpm ? bpm : ''}</PrimaryText>
-            </GestureRecognizer>            
+            (song || artist) ? (
+                <GestureRecognizer
+                    onSwipe={(dir, state) => this.onSwipe(dir, state)}
+                    style={styles.container}
+                    config={{ velocityThreshold: 0 }}
+                >
+                    <SoundLevel
+                        style={styles.soundBar}
+                        level={soundLevel}
+                    />                                        
+                    <Heading numberOfLines={1} style={styles.songname}>{song}</Heading>
+                    <SecondaryText numberOfLines={1}>{artist}</SecondaryText>
+                    {bpm ? (<PrimaryText style={styles.bpm}>{bpm} BPM</PrimaryText>) : null}
+                </GestureRecognizer>
+            ) : (
+                <View
+                    style={styles.container}                
+                >
+                    <Heading>Select a song on the computer!</Heading>
+                </View>
+            )      
         );
     }
 }
@@ -68,8 +75,9 @@ class Tracker extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        // justifyContent: 'center',
         alignItems: 'center',
+        // MAD FUCKING HACK TO MAKE SWIPE WORK
+        backgroundColor: 'transparent',
     },
     songname: {
         fontSize: 30,
@@ -77,6 +85,7 @@ const styles = StyleSheet.create({
         textAlign: 'center'        
     },
     bpm: {
+        marginTop: 10,
         fontWeight: 'bold'
     },
     soundBar: {
@@ -88,14 +97,9 @@ const styles = StyleSheet.create({
 function mapStateToProps(state, ownProps) {
     return {
         ...ownProps,
-        ...state.player
+        ws: state.connection.ws,
+        ...state.player,
     };
 }
 
-function mapDispatchToProps(dispatch) {
-    return {
-        setSound: bindActionCreators(setSound, dispatch),
-    };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Tracker);
+export default connect(mapStateToProps)(Tracker);

@@ -5,7 +5,7 @@ import Controls from './Controls';
 import Settings from './Settings';
 import Tracker from './Tracker';
 import BpmControls from './BpmControls';
-import { PRIMARY, PRIMARY_LIGHT } from '../../constants/colors';
+import { PRIMARY, COLORED } from '../../constants/colors';
 
 class Player extends Component {
     constructor(props) {

@@ -5,7 +5,7 @@ import { PRIMARY_TEXT, SECONDARY } from '../../constants/colors';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { play, pause, replay, nextTrack, requestState } from './playerActions';
+import { play, pause, replay, nextTrack, requestState } from './playerAPI';
 
 class Controls extends Component {
     constructor(props) {

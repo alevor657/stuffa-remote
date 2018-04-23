@@ -38,7 +38,12 @@ export function requestState(ws) {
 
 export function setSound(ws, payload = null) {
     console.log('SENDING setSound');
-    ws.send(generateMessage(types.SET_SOUND), payload);
+    ws.send(generateMessage(types.SET_SOUND, payload));
+}
+
+export function setBpm(ws, bpm = null) {
+    console.log('SENDING SET_BPM');
+    ws.send(generateMessage(types.SET_BPM, bpm));
 }
 
 export function toggleAutoBpm(ws) {

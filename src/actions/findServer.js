@@ -6,7 +6,9 @@ let baseURI = '192.168.1';
 /**
  * For dev
  */
-let devIp = '192.168.1.63';
+// let devIp = '192.168.1.63';
+// let devIp = '193.11.184.204';
+let devIp = '193.11.184.144';
 
 /**
  * For dev

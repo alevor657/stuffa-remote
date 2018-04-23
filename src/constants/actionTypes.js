@@ -16,6 +16,7 @@ export const PAUSE_SUCCESS = 'PAUSE_SUCCESS';
 export const PAUSE_FAILURE = 'PAUSE_FAILURE';
 
 export const SET_SOUND = 'SET_SOUND';
+export const SET_BPM = 'SET_BPM';
 export const BPM_AUTOPLAY_TOGGLE = 'BPM_AUTOPLAY_TOGGLE';
 
 // ?
