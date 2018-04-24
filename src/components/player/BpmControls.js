@@ -4,6 +4,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { connect } from 'react-redux';
 
 import { PRIMARY_TEXT, SECONDARY_LIGHT } from '../../constants/colors';
+import { setBaseBpm } from './playerAPI'; 
 
 class BpmControls extends Component {
     constructor(props) {
@@ -14,11 +15,15 @@ class BpmControls extends Component {
     }
 
     onMinus() {
+        let { ws, baseBpm, bpmJump } = this.props;
 
+        setBaseBpm(this.props.ws, baseBpm - bpmJump);
     }
 
     onPlus() {
+        let { ws, baseBpm, bpmJump } = this.props;
 
+        setBaseBpm(this.props.ws, baseBpm + bpmJump);
     }
 
     render() {
@@ -72,7 +77,8 @@ const styles = StyleSheet.create({
 function mapStateToProps(state, ownProps) {
     return {
         ws: state.connection.ws,
-        bpm: state.player.bpm,
+        baseBpm: state.player.baseBpm,
+        bpmJump: state.player.bpmJump,
         ...ownProps
     };
 }

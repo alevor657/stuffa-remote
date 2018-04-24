@@ -41,9 +41,19 @@ export function setSound(ws, payload = null) {
     ws.send(generateMessage(types.SET_SOUND, payload));
 }
 
-export function setBpm(ws, bpm = null) {
+export function setBaseBpm(ws, bpm = null) {
     console.log('SENDING SET_BPM');
     ws.send(generateMessage(types.SET_BPM, bpm));
+}
+
+export function setInterval(ws, interval = null) {
+    console.log('SENDING SET_BPM_INTERVAL');
+    ws.send(generateMessage(types.SET_BPM_INTERVAL, interval));
+}
+
+export function setBpmStep(ws, step = null) {
+    console.log('SENDING SET_BPM_STEP');
+    ws.send(generateMessage(types.SET_BPM_STEP, step));
 }
 
 export function toggleAutoBpm(ws) {

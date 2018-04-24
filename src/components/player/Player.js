@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native';
 
 import Controls from './Controls';
-import Settings from './Settings';
+import Settings from '../Settings/Settings';
 import Tracker from './Tracker';
 import BpmControls from './BpmControls';
 import { PRIMARY, COLORED } from '../../constants/colors';
