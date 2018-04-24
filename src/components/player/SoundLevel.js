@@ -13,7 +13,10 @@ class SoundLevel extends Component {
         };
     }
 
-    componentWillUpdate(nextProps) {
+    /**
+     * Bug?
+     */
+    getDerivedStateFromProps(nextProps) {
         let { level } = nextProps;
         // volume - high
         // volume - low

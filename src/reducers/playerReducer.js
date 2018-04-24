@@ -8,7 +8,8 @@ let initialState = {
     soundLevel: 0,
     bpmInterval: 0,
     bpmJump: 0,
-    autoBpm: false
+    autoBpm: false,
+    baseBpm: 0
 };
 
 /**
@@ -41,14 +42,9 @@ export default function player(state = initialState, action) {
             autoBpm: !state.autoBpm                        
         };
 
-    // case types.NEXT_TRACK_SUCCESS:
-    //     return {
-    //         ...state,
-    //     };
-    // case types.REPLAY_SUCCESS:
-    //     return {
-
-    //     };
+    /**
+     * Rename
+     */
     case types.REQUEST_STATE_SUCCESS: {
         const playerState = JSON.parse(action.payload);
 

@@ -9,6 +9,7 @@ import PrimaryText from '../Text/PrimaryText';
 const RoundIconButton = props => (
     <TouchableOpacity
         style={[styles.roundIconButton, props.style]}
+        onPress={props.onPress}
     >
         {props.icon ? (
             props.icon
