@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, StyleSheet, TouchableOpacity, Switch } from 'react-native';
 
 import PrimaryText from '../UI/Text/PrimaryText';
+import SecondaryText from '../UI/Text/SecondaryText';
 import PlusMinusValue from './PlusMinusValue';
 import { setBpmStep } from '../player/playerAPI';
 
@@ -32,6 +33,13 @@ class BpmJump extends Component {
                     value={this.props.bpmJump}
                     onPlus={this.onPlus}
                     onMinus={this.onMinus}
+                    description={
+                        <SecondaryText
+                            style={styles.description}
+                        >
+                            jump
+                        </SecondaryText>
+                    }
                 />
             </View>
         );
@@ -41,14 +49,17 @@ class BpmJump extends Component {
 const styles = StyleSheet.create({
     row: {
         flex: 1,
-        // flexDirection: 'row',
-        // justifyContent: 'center',
+    },
+    description: {
+        fontSize: 12,
+        color: 'grey',
+        paddingBottom: 6,
+        alignSelf: 'center'
     },
     innerRow: {
         flex: 1,
         flexDirection: 'row',
         alignItems: 'center',
-        // alignContent: 'center',
         justifyContent: 'center',
         padding: 15
     },

@@ -22,7 +22,7 @@ class BpmAutoplay extends Component {
         return (
             <TouchableOpacity
                 onPress={this.onPressAutoplay}
-                style={[styles.row, styles.borderBottom, styles.borderTop]}
+                style={styles.row}
             >
                 <View style={styles.innerRow}>
                     <PrimaryText>BPM autoplay: </PrimaryText>
@@ -39,7 +39,7 @@ class BpmAutoplay extends Component {
 
 const styles = StyleSheet.create({
     row: {
-        flex: 1,
+        // flex: 1,
         // flexDirection: 'row',
         // justifyContent: 'center',
     },

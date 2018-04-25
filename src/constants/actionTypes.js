@@ -23,4 +23,4 @@ export const SET_BPM_STEP = 'SET_BPM_STEP';
 
 // ?
 export const REQUEST_STATE = 'REQUEST_STATE';
-export const REQUEST_STATE_SUCCESS = 'REQUEST_STATE_SUCCESS';
+export const UPDATE = 'UPDATE';

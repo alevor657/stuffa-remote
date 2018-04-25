@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import PrimaryText from '../UI/Text/PrimaryText';
 import SecondaryText from '../UI/Text/SecondaryText';
-import Heading from '../UI/Text/Heading';
-import RoundIconButton from '../UI/Button/RoundIconButton';
-import { COLORED, SECONDARY_LIGHT } from '../../constants/colors';
+import { COLORED } from '../../constants/colors';
 import PlusMinusValue from './PlusMinusValue';
 import { setInterval } from '../player/playerAPI';
 
@@ -34,17 +31,34 @@ class Interval extends Component {
         let { autoBpm, baseBpm, bpmInterval } = this.props;
 
         return (
-            <View style={[styles.row, styles.borderBottom]}>
-                <View style={[styles.innerRow, styles.intervalSegment]}>
-                    <Heading>{baseBpm}</Heading>
-                </View>
-                <View style={[styles.innerRow, styles.intervalSegment]}>
-                    <SecondaryText>{`${baseBpm - bpmInterval} - ${baseBpm + bpmInterval}`}</SecondaryText>
+            <View style={styles.container}>
+                <View style={styles.row}>
+                    <View style={styles.innerRow}>
+                        <SecondaryText
+                            style={styles.description}
+                        >base BPM</SecondaryText>
+                        <PrimaryText
+                            style={styles.value}
+                        >{baseBpm}</PrimaryText>
+                    </View>
+                    <View style={styles.innerRow}>
+                        <SecondaryText
+                            style={styles.description}
+                        >interval</SecondaryText>
+                        <PrimaryText
+                            style={styles.value}
+                        >{`${baseBpm - bpmInterval} - ${baseBpm + bpmInterval}`}</PrimaryText>
+                    </View>
                 </View>
                 <PlusMinusValue
                     value={bpmInterval}
                     onPlus={this.onPlus}
                     onMinus={this.onMinus}
+                    description={
+                        <SecondaryText
+                            style={styles.description}
+                        >set interval</SecondaryText>
+                    }
                 />
             </View>
         );
@@ -52,22 +66,27 @@ class Interval extends Component {
 }
 
 const styles = StyleSheet.create({
-    row: {
+    container: {
         flex: 2,
-        // flexDirection: 'row',
-        // justifyContent: 'center',
+        justifyContent: 'center',
+    },
+    row: {
+        flexDirection: 'row',
+        justifyContent: 'space-around',
     },
     innerRow: {
-        flex: 1,
-        flexDirection: 'row',
-        // alignItems: 'center',
-        // alignContent: 'center',
-        // justifyContent: 'center',
-        padding: 15
+        alignItems: 'center',
+        alignContent: 'flex-start',
+        justifyContent: 'flex-start',
     },
-    intervalSegment: {
-        alignItems: 'flex-start',
-        justifyContent: 'center'
+    value: {
+        fontSize: 16,
+    },
+    description: {
+        fontSize: 12,
+        color: 'grey',
+        paddingBottom: 6,
+        alignSelf: 'center'
     },
     borderBottom: {
         borderBottomWidth: 1,

@@ -17,47 +17,48 @@ class PlusMinusValue extends Component {
         let { value } = this.props;
 
         return (
-            <View style={[styles.innerRow, styles.intervalSegment]}>
-                <RoundIconButton
-                    icon={
-                        <Icon
-                            name='minus'
-                            size={20}
-                            color='white'
-                        />
-                    }
-                    style={styles.icon}
-                    onPress={this.props.onMinus}
-                />
-                <PrimaryText
-                    style={{
-                        alignSelf: 'center'
-                    }}
-                >{value}</PrimaryText>
-                <RoundIconButton
-                    icon={
-                        <Icon
-                            name='plus'
-                            size={20}
-                            color='white'
-                        />
-                    }
-                    style={styles.icon}
-                    onPress={this.props.onPlus}
-                />
+            <View style={styles.container}>
+                {this.props.description}
+                <View style={[styles.innerRow, styles.intervalSegment, this.props.style]}>
+                    <RoundIconButton
+                        icon={
+                            <Icon
+                                name='minus'
+                                size={20}
+                                color='white'
+                            />
+                        }
+                        style={styles.icon}
+                        onPress={this.props.onMinus}
+                    />
+                    <PrimaryText
+                        style={{
+                            alignSelf: 'center'
+                        }}
+                    >{value}</PrimaryText>
+                    <RoundIconButton
+                        icon={
+                            <Icon
+                                name='plus'
+                                size={20}
+                                color='white'
+                            />
+                        }
+                        style={styles.icon}
+                        onPress={this.props.onPlus}
+                    />
+                </View>
             </View>
         );
     }
 }
 
 const styles = StyleSheet.create({
+    container: {
+
+    },
     innerRow: {
-        flex: 1,
         flexDirection: 'row',
-        // alignItems: 'center',
-        // alignContent: 'center',
-        // justifyContent: 'center',
-        padding: 15
     },
     intervalSegment: {
         alignItems: 'flex-start',
@@ -65,10 +66,9 @@ const styles = StyleSheet.create({
     },
     icon: {
         alignSelf: 'center',
-        margin: 20,
+        marginHorizontal: 20,
         width: 40,
         height: 40,
-        // position: 'absolute'
     },
 });
 

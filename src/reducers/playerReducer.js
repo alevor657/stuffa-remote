@@ -45,7 +45,7 @@ export default function player(state = initialState, action) {
     /**
      * Rename
      */
-    case types.REQUEST_STATE_SUCCESS: {
+    case types.UPDATE: {
         const playerState = JSON.parse(action.payload);
 
         return {

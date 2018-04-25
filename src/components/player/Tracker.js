@@ -63,9 +63,12 @@ class Tracker extends Component {
                 </GestureRecognizer>
             ) : (
                 <View
-                    style={styles.container}                
+                    style={[
+                        styles.container,
+                        styles.allInMiddle
+                    ]}                
                 >
-                    <Heading>Select a song on the computer!</Heading>
+                    <Heading>Song not selected</Heading>
                 </View>
             )      
         );
@@ -78,6 +81,11 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         // MAD FUCKING HACK TO MAKE SWIPE WORK
         backgroundColor: 'transparent',
+    },
+    allInMiddle: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        alignContent: 'center',
     },
     songname: {
         fontSize: 30,
