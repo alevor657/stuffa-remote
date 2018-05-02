@@ -1,4 +1,4 @@
-#Wed Apr 11 12:33:07 EET 2018
+#Wed May 02 13:24:59 EET 2018
 base.0=D\:\\cygwin64\\home\\user\\code\\stuffa-remote\\android\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
 renamed.0=classes.dex
 file.0=D\:\\cygwin64\\home\\user\\code\\stuffa-remote\\android\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex

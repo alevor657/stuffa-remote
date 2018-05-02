@@ -6,34 +6,34 @@ let baseURI = '192.168.1';
 /**
  * For dev
  */
-let devIp = '192.168.1.63';
+// let devIp = '192.168.1.63';
 // let devIp = '193.11.184.204';
 // let devIp = '193.11.184.144';
 
 /**
  * For dev
  */
-export default function findServer() {
-    return directConnect(devIp);
-}
+// export default function findServer() {
+//     return directConnect(devIp);
+// }
 
 /**
  * Production
  */
-// export default function findServer() {
-//     console.log('CONNECTING...');
+export default function findServer() {
+    console.log('CONNECTING...');
 
-//     let promises = [],
-//         lastIPSector = 0;
+    let promises = [],
+        lastIPSector = 0;
 
-//     for (let i = 0; i < 256; i++) {
-//         promises.push(check(i));
-//     }
+    for (let i = 0; i < 256; i++) {
+        promises.push(check(i));
+    }
 
-//     let res = Promise.race(promises);
+    let res = Promise.race(promises);
 
-//     return res;
-// }
+    return res;
+}
 
  /**
   * TODO: 
@@ -50,12 +50,13 @@ function check(i = 0) {
         let t = setTimeout((e) => {
             ws.removeEventListener('open', resolver);
             ws.close();
-            reject(e);
+            ws = null;
+            return reject(e);
         }, 3000, 'Timeouted');
 
         let resolver = function () {
             clearTimeout(t);
-            resolve({
+            return resolve({
                 ws,
                 desktopAddress: `${baseURI}.${i}`
             });
