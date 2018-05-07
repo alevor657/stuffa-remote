@@ -40,7 +40,12 @@ class App extends Component {
                         <PrimaryText style={styles.connectingText}>Connecting</PrimaryText>
                     </View>
                 )}
-                {this.props.modalVisible && <ManualAddressInput/>}
+                {this.props.modalVisible && <ManualAddressInput
+                    onRequestClose={() => {
+                        console.log('REQUEST CLOSE MODAL');
+                        this.props.connectToDesktop();
+                    }}
+                />}
             </View>
         );
     }

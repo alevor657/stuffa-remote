@@ -41,10 +41,6 @@ export default function player(state = initialState, action) {
             ...state,
             autoBpm: !state.autoBpm                        
         };
-
-    /**
-     * Rename
-     */
     case types.UPDATE: {
         const playerState = JSON.parse(action.payload);
 
