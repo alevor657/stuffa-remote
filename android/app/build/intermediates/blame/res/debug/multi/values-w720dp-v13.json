@@ -24,30 +24,6 @@
         ]
     },
     {
-        "outputFile": "D:\\cygwin64\\home\\user\\code\\stuffa-remote\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-w720dp-v13\\values-w720dp-v13.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 76,
-                    "endOffset": 127
-                },
-                "from": {
-                    "file": "D:\\cygwin64\\home\\user\\code\\stuffa-remote\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-w720dp\\values-w720dp.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 282,
-                        "endColumn": 76,
-                        "endOffset": 354
-                    }
-                }
-            }
-        ]
-    },
-    {
         "outputFile": "D:\\home\\yooo\\code\\stuffa-remote\\android\\D:\\home\\yooo\\code\\stuffa-remote\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-w720dp-v13\\values-w720dp-v13.xml",
         "map": [
             {
@@ -60,6 +36,30 @@
                 },
                 "from": {
                     "file": "D:\\home\\yooo\\code\\stuffa-remote\\android\\D:\\home\\yooo\\code\\stuffa-remote\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-w720dp\\values-w720dp.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 282,
+                        "endColumn": 76,
+                        "endOffset": 354
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "D:\\cygwin64\\home\\user\\code\\stuffa-remote\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-w720dp-v13\\values-w720dp-v13.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 76,
+                    "endOffset": 127
+                },
+                "from": {
+                    "file": "D:\\cygwin64\\home\\user\\code\\stuffa-remote\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-w720dp\\values-w720dp.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,

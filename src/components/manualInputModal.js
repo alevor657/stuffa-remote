@@ -28,7 +28,7 @@ class ManualAddressInput extends Component {
                     visible={this.props.visible}
                     animationType={'slide'}
                     onRequestClose={() => {
-                        this.props.onRequestClose()
+                        this.props.onRequestClose();
                         this.props.close();
                     }}
                 >
