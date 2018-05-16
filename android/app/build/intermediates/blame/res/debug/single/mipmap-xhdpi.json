@@ -1,5 +1,13 @@
 [
     {
+        "merged": "D:\\home\\yooo\\code\\stuffa-remote\\android\\D:\\home\\yooo\\code\\stuffa-remote\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_launcher.png",
+        "source": "D:\\home\\yooo\\code\\stuffa-remote\\android\\D:\\home\\yooo\\code\\stuffa-remote\\android\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\home\\yooo\\code\\stuffa-remote\\android\\D:\\cygwin64\\home\\user\\code\\stuffa-remote\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_launcher.png",
+        "source": "D:\\home\\yooo\\code\\stuffa-remote\\android\\D:\\cygwin64\\home\\user\\code\\stuffa-remote\\android\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
         "merged": "D:\\home\\yooo\\code\\stuffa-remote\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_launcher.png",
         "source": "D:\\home\\yooo\\code\\stuffa-remote\\android\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
     },

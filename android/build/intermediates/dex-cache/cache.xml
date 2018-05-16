@@ -66,6 +66,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="D:\cygwin64\home\user\code\stuffa-remote\android\app\build\intermediates\exploded-aar\com.facebook.react\react-native\0.53.3\jars\libs\infer-annotations-4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="9809e90be788acdb479b2b44e2112f3295a03068">
+        <dex dex="D:\cygwin64\home\user\code\stuffa-remote\android\app\build\intermediates\pre-dexed\debug\infer-annotations-4.0_85274ba07092dc868f26a34a2963a1447bf1ec0b.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="C:\Users\user\.gradle\caches\modules-2\files-2.1\com.facebook.fbui.textlayoutbuilder\staticlayout-proxy\1.0\f162442a19fff13995fbd51ba414d9ee05579080\staticlayout-proxy-1.0.jar"
         jumboMode="false"
         optimize="true"
@@ -81,15 +90,6 @@
         revision="23.0.1"
         sha1="c03c08c9934b23c8c09c803345ec51a74119127b">
         <dex dex="D:\cygwin64\home\user\code\stuffa-remote\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-imagepipeline-okhttp3-1.3.0_591a4e0ae73b136bc458d15edfcf3832fdb57408.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\cygwin64\home\user\code\stuffa-remote\android\app\build\intermediates\exploded-aar\com.facebook.react\react-native\0.52.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="af61eb11ffb4296cab0c93218248a3dfcec0a84c">
-        <dex dex="D:\cygwin64\home\user\code\stuffa-remote\android\app\build\intermediates\pre-dexed\debug\com.facebook.react-react-native-0.52.0_94b13a0f0069ba9b624673f61f1a19ce190addf8.jar" />
     </item>
     <item
         is-multidex="false"
@@ -117,15 +117,6 @@
         revision="23.0.1"
         sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
         <dex dex="D:\cygwin64\home\user\code\stuffa-remote\android\app\build\intermediates\pre-dexed\debug\bolts-tasks-1.4.0_1cb67a1a5ff343a7ddc6cefec4d0194257c780d3.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\cygwin64\home\user\code\stuffa-remote\android\app\build\intermediates\exploded-aar\com.facebook.react\react-native\0.52.0\jars\libs\infer-annotations-4.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="9809e90be788acdb479b2b44e2112f3295a03068">
-        <dex dex="D:\cygwin64\home\user\code\stuffa-remote\android\app\build\intermediates\pre-dexed\debug\infer-annotations-4.0_018efa4e52e9ff50e7fbf55d5e503fba6d8a58d2.jar" />
     </item>
     <item
         is-multidex="false"
@@ -189,6 +180,15 @@
         revision="23.0.1"
         sha1="72128af126ddd7d6252da9357fe560d3abcdfb0c">
         <dex dex="D:\cygwin64\home\user\code\stuffa-remote\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-imagepipeline-base-1.3.0_780e8fce5ab0d1896df1a677d0b807aec9ba489f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\cygwin64\home\user\code\stuffa-remote\android\app\build\intermediates\exploded-aar\com.facebook.react\react-native\0.53.3\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="71e22619df25643022a7f7281461ef5e926141be">
+        <dex dex="D:\cygwin64\home\user\code\stuffa-remote\android\app\build\intermediates\pre-dexed\debug\com.facebook.react-react-native-0.53.3_f3fbc59daf79ed49a2f3a6dd68575e9e0880b0dd.jar" />
     </item>
 
 </items>

@@ -1,5 +1,31 @@
 [
     {
+        "outputFile": "D:\\cygwin64\\home\\user\\code\\stuffa-remote\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-hdpi-v4\\values-hdpi-v4.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endLine": 6,
+                    "endColumn": 13,
+                    "endOffset": 327
+                },
+                "from": {
+                    "file": "D:\\cygwin64\\home\\user\\code\\stuffa-remote\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-hdpi\\values-hdpi.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 286,
+                        "endLine": 8,
+                        "endColumn": 13,
+                        "endOffset": 558
+                    }
+                }
+            }
+        ]
+    },
+    {
         "outputFile": "D:\\home\\yooo\\code\\stuffa-remote\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-hdpi-v4\\values-hdpi-v4.xml",
         "map": [
             {
@@ -26,7 +52,7 @@
         ]
     },
     {
-        "outputFile": "D:\\cygwin64\\home\\user\\code\\stuffa-remote\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-hdpi-v4\\values-hdpi-v4.xml",
+        "outputFile": "D:\\home\\yooo\\code\\stuffa-remote\\android\\D:\\cygwin64\\home\\user\\code\\stuffa-remote\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-hdpi-v4\\values-hdpi-v4.xml",
         "map": [
             {
                 "to": {
@@ -38,7 +64,33 @@
                     "endOffset": 327
                 },
                 "from": {
-                    "file": "D:\\cygwin64\\home\\user\\code\\stuffa-remote\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-hdpi\\values-hdpi.xml",
+                    "file": "D:\\home\\yooo\\code\\stuffa-remote\\android\\D:\\cygwin64\\home\\user\\code\\stuffa-remote\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-hdpi\\values-hdpi.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 286,
+                        "endLine": 8,
+                        "endColumn": 13,
+                        "endOffset": 558
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "D:\\home\\yooo\\code\\stuffa-remote\\android\\D:\\home\\yooo\\code\\stuffa-remote\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-hdpi-v4\\values-hdpi-v4.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endLine": 6,
+                    "endColumn": 13,
+                    "endOffset": 327
+                },
+                "from": {
+                    "file": "D:\\home\\yooo\\code\\stuffa-remote\\android\\D:\\home\\yooo\\code\\stuffa-remote\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-hdpi\\values-hdpi.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,

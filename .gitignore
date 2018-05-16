@@ -15,5 +15,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+*.keystore
+android/gradle.properties
 
 .vscode
+android
+ios
