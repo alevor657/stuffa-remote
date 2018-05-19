@@ -30,6 +30,7 @@ class BpmAutoplay extends Component {
                         onTintColor={COLORED}
                         thumbTintColor={SECONDARY_LIGHT}
                         value={autoBpm}
+                        onValueChange={this.onPressAutoplay}
                     />
                 </View>
             </TouchableOpacity>

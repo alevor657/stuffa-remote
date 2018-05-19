@@ -20,12 +20,12 @@
         "source": "D:\\home\\yooo\\code\\stuffa-remote\\android\\D:\\home\\yooo\\code\\stuffa-remote\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_ratingbar_full_material.xml"
     },
     {
-        "merged": "D:\\cygwin64\\home\\user\\code\\stuffa-remote\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_full_material.xml",
-        "source": "D:\\cygwin64\\home\\user\\code\\stuffa-remote\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_ratingbar_full_material.xml"
-    },
-    {
         "merged": "D:\\home\\yooo\\code\\stuffa-remote\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_spinner_textfield_background_material.xml",
         "source": "D:\\home\\yooo\\code\\stuffa-remote\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_spinner_textfield_background_material.xml"
+    },
+    {
+        "merged": "D:\\cygwin64\\home\\user\\code\\stuffa-remote\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_full_material.xml",
+        "source": "D:\\cygwin64\\home\\user\\code\\stuffa-remote\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_ratingbar_full_material.xml"
     },
     {
         "merged": "D:\\home\\yooo\\code\\stuffa-remote\\android\\D:\\cygwin64\\home\\user\\code\\stuffa-remote\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_light.xml",

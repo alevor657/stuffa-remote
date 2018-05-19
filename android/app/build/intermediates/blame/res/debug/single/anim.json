@@ -16,12 +16,12 @@
         "source": "D:\\home\\yooo\\code\\stuffa-remote\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\anim\\abc_slide_in_bottom.xml"
     },
     {
-        "merged": "D:\\cygwin64\\home\\user\\code\\stuffa-remote\\android\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
-        "source": "D:\\cygwin64\\home\\user\\code\\stuffa-remote\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\anim\\abc_slide_out_top.xml"
-    },
-    {
         "merged": "D:\\cygwin64\\home\\user\\code\\stuffa-remote\\android\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_exit.xml",
         "source": "D:\\cygwin64\\home\\user\\code\\stuffa-remote\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\anim\\abc_popup_exit.xml"
+    },
+    {
+        "merged": "D:\\cygwin64\\home\\user\\code\\stuffa-remote\\android\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
+        "source": "D:\\cygwin64\\home\\user\\code\\stuffa-remote\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\anim\\abc_slide_out_top.xml"
     },
     {
         "merged": "D:\\home\\yooo\\code\\stuffa-remote\\android\\D:\\home\\yooo\\code\\stuffa-remote\\android\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
