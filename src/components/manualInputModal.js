@@ -27,6 +27,7 @@ class ManualAddressInput extends Component {
                 <Modal
                     visible={this.props.visible}
                     animationType={'slide'}
+                    transparent={true}
                     onRequestClose={() => {
                         this.props.onRequestClose();
                         this.props.close();

@@ -67,8 +67,8 @@ const styles = StyleSheet.create({
     icon: {
         alignSelf: 'center',
         marginHorizontal: 20,
-        width: 40,
-        height: 40,
+        width: 50,
+        height: 50,
     },
 });
 

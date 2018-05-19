@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
     },
     description: {
-        fontSize: 12,
+        fontSize: 16,
         color: 'grey',
         paddingBottom: 6,
         alignSelf: 'center'
