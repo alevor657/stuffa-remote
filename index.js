@@ -12,4 +12,4 @@ let realApp = () => (
     </Provider>
 );
 
-AppRegistry.registerComponent('stuffaremote', () => realApp);
+AppRegistry.registerComponent('bplay', () => realApp);

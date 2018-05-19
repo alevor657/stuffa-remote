@@ -1,4 +1,4 @@
-package com.stuffaremote;
+package com.bplay;
 
 import android.app.Application;
 

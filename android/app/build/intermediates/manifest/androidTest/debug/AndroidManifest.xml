@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.stuffaremote.test">
+    package="com.bplay.test">
 
     <uses-sdk android:minSdkVersion="16" android:targetSdkVersion="22" />
 
@@ -9,8 +9,8 @@
     </application>
 
     <instrumentation android:name="android.test.InstrumentationTestRunner"
-                     android:targetPackage="com.stuffaremote"
+                     android:targetPackage="com.bplay"
                      android:handleProfiling="false"
                      android:functionalTest="false"
-                     android:label="Tests for com.stuffaremote"/>
+                     android:label="Tests for com.bplay"/>
 </manifest>

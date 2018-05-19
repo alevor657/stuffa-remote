@@ -2,7 +2,7 @@
 manifest
 ADDED from D:\cygwin64\home\user\code\stuffa-remote\android\app\src\main\AndroidManifest.xml:1:1-32:12
 	package
-		ADDED from D:\cygwin64\home\user\code\stuffa-remote\android\app\src\main\AndroidManifest.xml:2:5-31
+		ADDED from D:\cygwin64\home\user\code\stuffa-remote\android\app\src\main\AndroidManifest.xml:2:5-24
 		INJECTED from D:\cygwin64\home\user\code\stuffa-remote\android\app\src\main\AndroidManifest.xml
 		INJECTED from D:\cygwin64\home\user\code\stuffa-remote\android\app\src\main\AndroidManifest.xml
 	android:versionName
@@ -62,7 +62,7 @@ MERGED from [org.webkit:android-jsc:r174650] D:\cygwin64\home\user\code\stuffa-r
 		ADDED from D:\cygwin64\home\user\code\stuffa-remote\android\app\src\main\AndroidManifest.xml:18:7-38
 	android:name
 		ADDED from D:\cygwin64\home\user\code\stuffa-remote\android\app\src\main\AndroidManifest.xml:14:7-38
-activity#com.stuffaremote.MainActivity
+activity#com.bplay.MainActivity
 ADDED from D:\cygwin64\home\user\code\stuffa-remote\android\app\src\main\AndroidManifest.xml:19:7-28:18
 	android:label
 		ADDED from D:\cygwin64\home\user\code\stuffa-remote\android\app\src\main\AndroidManifest.xml:21:9-41
